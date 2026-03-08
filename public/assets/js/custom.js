@@ -31,7 +31,7 @@ fetch('/applications', {
         return response.json();
     })
     .then(data => {
-        console.log('Успешно отправлено:', data);
+        // Success
     })
     .catch(error => {
         console.error('Ошибка при отправке:', error);

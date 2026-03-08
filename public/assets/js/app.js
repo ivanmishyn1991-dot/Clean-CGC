@@ -291,10 +291,10 @@ $('#quoteForm')?.addEventListener('submit', (e) => {
             return response.json();
         })
         .then(data => {
-            console.log('Успешно отправлено:', data);
+            // console.log('Success:', data);
         })
         .catch(error => {
-            console.error('Ошибка при отправке:', error);
+            // Error sending form
         });
 
 
@@ -752,7 +752,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const successBlock = document.getElementById('quickQuoteSuccess');
 
     if (!btnCallMeBack || !overlay) {
-        console.log('Quick Quote: button or overlay not found');
+        // Quick Quote: elements not found
         return;
     }
 
@@ -839,7 +839,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error('Server error');
             }
         } catch (error) {
-            console.error('Quick quote error:', error);
+            // Error handled silently
             alert('Error sending request. Please try again.');
             submitBtn.disabled = false;
             submitBtn.querySelector('.btn-quick-text').textContent = 'Send';

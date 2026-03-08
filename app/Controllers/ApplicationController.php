@@ -14,6 +14,33 @@ class ApplicationController extends Controller
     {
         $data = F::request()->data->getData();
 
+        // Валидация обязательных полей
+        $name = trim($data['name'] ?? '');
+        $phone = trim($data['phone'] ?? '');
+        $city = trim($data['city'] ?? '');
+        
+        if (empty($name) || empty($phone) || empty($city)) {
+            F::response()->status(400);
+            F::json(['success' => false, 'error' => 'Name, phone and city are required']);
+            return;
+        }
+        
+        // Проверка формата телефона
+        $phoneDigits = preg_replace('/[^0-9]/', '', $phone);
+        if (strlen($phoneDigits) < 10) {
+            F::response()->status(400);
+            F::json(['success' => false, 'error' => 'Invalid phone number']);
+            return;
+        }
+        
+        // Валидация email если указан
+        $email = trim($data['email'] ?? '');
+        if (!empty($email) && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            F::response()->status(400);
+            F::json(['success' => false, 'error' => 'Invalid email format']);
+            return;
+        }
+
         // Получаем загруженные фото из JSON
         $uploadedPhotos = [];
         if (!empty($data['uploaded_photos'])) {
@@ -25,10 +52,10 @@ class ApplicationController extends Controller
 
         $application = new Application();
         $application
-            ->setName($data['name'] ?? '')
-            ->setEmail($data['email'] ?? '')
-            ->setPhone($data['phone'] ?? '')
-            ->setCity($data['city'] ?? '')
+            ->setName($name)
+            ->setEmail($email)
+            ->setPhone($phone)
+            ->setCity($city)
             ->setMessage($data['message'] ?? '')
             ->setContactConsent($data['consent_contact_all'] ?? false);
 
@@ -83,16 +110,29 @@ class ApplicationController extends Controller
     {
         $data = F::request()->data->getData();
         
-        $phone = $data['phone'] ?? '';
+        $phone = trim($data['phone'] ?? '');
         
+        // Валидация телефона
         if (empty($phone)) {
+            F::response()->status(400);
             F::json(['success' => false, 'error' => 'Phone is required']);
             return;
         }
         
+        // Проверка формата телефона (минимум 10 цифр)
+        $phoneDigits = preg_replace('/[^0-9]/', '', $phone);
+        if (strlen($phoneDigits) < 10) {
+            F::response()->status(400);
+            F::json(['success' => false, 'error' => 'Invalid phone number']);
+            return;
+        }
+        
+        // Sanitize phone for display
+        $phoneSafe = htmlspecialchars($phone, ENT_QUOTES, 'UTF-8');
+        
         // Формируем сообщение для Telegram с подписью "заявка на обратный звонок"
         $message = "📞 <b>Заявка на обратный звонок</b>\n\n";
-        $message .= "📱 Телефон: <code>{$phone}</code>\n";
+        $message .= "📱 Телефон: <code>{$phoneSafe}</code>\n";
         $message .= "🕐 Время: " . date('d.m.Y H:i:s');
         
         $tg = new TelegramSenderService();
