@@ -147,7 +147,14 @@ const closeModal = (modal) => {
     if (!document.querySelector('.modal.open')) document.body.classList.remove('modal-open');
 };
 
-$('#areasTrigger').onclick = () => openModal($('#citiesModal'));
+// Areas trigger - открывает модал городов без скролла
+const areasTrigger = $('#areasTrigger');
+if (areasTrigger) {
+    areasTrigger.onclick = (e) => {
+        e.preventDefault();
+        openModal($('#citiesModal'));
+    };
+}
 
 $$('.service-card').forEach(card => {
     card.addEventListener('click', () => {

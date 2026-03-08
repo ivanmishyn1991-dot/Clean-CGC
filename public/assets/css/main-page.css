@@ -6,6 +6,16 @@
 .aeo-hero {
     padding: 48px 0 10px;
 }
+
+/* PC: увеличить высоту hero чтобы следующий блок не был виден */
+@media (min-width: 769px) {
+    .aeo-hero {
+        min-height: calc(100vh - 100px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
 .aeo-hero h1 {
     margin: 0 0 16px;
     font-family: 'Poppins', sans-serif;
@@ -328,6 +338,16 @@
     box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
     animation: softGlow 2s ease-in-out infinite;
 }
+
+/* PC: увеличить кнопки на 30% */
+@media (min-width: 769px) {
+    .btn-callback {
+        padding: 21px 52px;
+        font-size: 1.3rem;
+        min-width: 220px;
+    }
+}
+
 .btn-callback:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5);
@@ -357,6 +377,20 @@
     box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
     animation: orangeGlow 2s ease-in-out infinite;
     font-family: inherit;
+}
+
+/* PC: увеличить кнопки на 30% и сделать одинаковыми */
+@media (min-width: 769px) {
+    .btn-price {
+        padding: 21px 52px;
+        font-size: 1.3rem;
+        min-width: 220px;
+    }
+    
+    /* Отступ между кнопками 2см (~20px) */
+    .cta-row {
+        gap: 20px !important;
+    }
 }
 .btn-price:hover {
     transform: translateY(-3px);

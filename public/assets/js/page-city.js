@@ -186,6 +186,163 @@ window.addEventListener('load', () => {
     });
 })();
 
+/* ===== Side CTA Buttons (PC only) ===== */
+(function(){
+    const sideCallMeBack = document.getElementById('sideCallMeBack');
+    const sidePriceBtn = document.getElementById('sidePriceBtn');
+    
+    // Call me back - открывает Quick Quote модал
+    if (sideCallMeBack) {
+        sideCallMeBack.addEventListener('click', () => {
+            const quickQuoteOverlay = document.getElementById('quickQuoteOverlay');
+            const quickQuoteModal = document.getElementById('quickQuoteModal');
+            if (quickQuoteOverlay && quickQuoteModal) {
+                quickQuoteOverlay.classList.add('open');
+                quickQuoteModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                const phoneInput = document.getElementById('quickPhone');
+                if (phoneInput) setTimeout(() => phoneInput.focus(), 150);
+            }
+        });
+    }
+    
+    // Price - открывает Price модал
+    if (sidePriceBtn) {
+        sidePriceBtn.addEventListener('click', () => {
+            const priceOverlay = document.getElementById('priceModalOverlay');
+            const priceModal = document.getElementById('priceModal');
+            if (priceOverlay && priceModal) {
+                priceOverlay.classList.add('open');
+                priceModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+})();
+
+/* ===== Quick Quote & Price Modals Handling ===== */
+(function(){
+    // Quick Quote Modal
+    const quickQuoteOverlay = document.getElementById('quickQuoteOverlay');
+    const quickQuoteModal = document.getElementById('quickQuoteModal');
+    const quickQuoteClose = document.getElementById('quickQuoteClose');
+    const quickQuoteForm = document.getElementById('quickQuoteForm');
+    const quickPhoneInput = document.getElementById('quickPhone');
+    const quickQuoteSuccess = document.getElementById('quickQuoteSuccess');
+    const btnQuickSubmit = document.getElementById('btnQuickSubmit');
+    
+    // Price Modal
+    const priceOverlay = document.getElementById('priceModalOverlay');
+    const priceModal = document.getElementById('priceModal');
+    const priceClose = document.getElementById('priceModalClose');
+    const priceCallMeBack = document.getElementById('priceCallMeBack');
+    
+    function closeQuickQuote() {
+        if (quickQuoteOverlay) quickQuoteOverlay.classList.remove('open');
+        if (quickQuoteModal) quickQuoteModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    
+    function closePriceModal() {
+        if (priceOverlay) priceOverlay.classList.remove('open');
+        if (priceModal) priceModal.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    
+    // Close buttons
+    if (quickQuoteClose) quickQuoteClose.addEventListener('click', closeQuickQuote);
+    if (priceClose) priceClose.addEventListener('click', closePriceModal);
+    
+    // Click outside to close
+    if (quickQuoteOverlay) quickQuoteOverlay.addEventListener('click', (e) => {
+        if (e.target === quickQuoteOverlay) closeQuickQuote();
+    });
+    if (priceOverlay) priceOverlay.addEventListener('click', (e) => {
+        if (e.target === priceOverlay) closePriceModal();
+    });
+    
+    // Price modal "Call me back" button
+    if (priceCallMeBack) {
+        priceCallMeBack.addEventListener('click', () => {
+            closePriceModal();
+            setTimeout(() => {
+                if (quickQuoteOverlay && quickQuoteModal) {
+                    quickQuoteOverlay.classList.add('open');
+                    quickQuoteModal.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                    if (quickPhoneInput) setTimeout(() => quickPhoneInput.focus(), 150);
+                }
+            }, 300);
+        });
+    }
+    
+    // Keyboard - Escape to close
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            if (quickQuoteOverlay?.classList.contains('open')) closeQuickQuote();
+            if (priceOverlay?.classList.contains('open')) closePriceModal();
+        }
+    });
+    
+    // Quick Quote Form Submission
+    if (quickQuoteForm && btnQuickSubmit) {
+        quickQuoteForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const phone = quickPhoneInput?.value?.trim();
+            const csrfToken = quickQuoteForm.querySelector('input[name="csrf_token"]')?.value || '';
+            
+            if (!phone || phone.length < 10) {
+                quickPhoneInput?.focus();
+                return;
+            }
+            
+            btnQuickSubmit.disabled = true;
+            const btnText = btnQuickSubmit.querySelector('.btn-quick-text');
+            if (btnText) btnText.textContent = '...';
+            
+            try {
+                const response = await fetch('/quick-quote', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ phone: phone, csrf_token: csrfToken })
+                });
+                
+                if (response.ok) {
+                    quickQuoteForm.style.display = 'none';
+                    if (quickQuoteSuccess) quickQuoteSuccess.style.display = 'block';
+                    
+                    // Show toast if available
+                    if (typeof Toast !== 'undefined') {
+                        Toast.success('We will call you back shortly!');
+                    }
+                    
+                    setTimeout(() => {
+                        closeQuickQuote();
+                        setTimeout(() => {
+                            quickQuoteForm.style.display = 'block';
+                            quickQuoteForm.reset();
+                            if (quickQuoteSuccess) quickQuoteSuccess.style.display = 'none';
+                            btnQuickSubmit.disabled = false;
+                            if (btnText) btnText.textContent = 'Send';
+                        }, 300);
+                    }, 3000);
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                if (typeof Toast !== 'undefined') {
+                    Toast.error('Error sending request. Please try again.');
+                } else {
+                    alert('Error sending request. Please try again.');
+                }
+                btnQuickSubmit.disabled = false;
+                if (btnText) btnText.textContent = 'Send';
+            }
+        });
+    }
+})();
+
 /* ===== Scroll Reveal Animations ===== */
 (function(){
     // Select content area - works for both city pages and service pages

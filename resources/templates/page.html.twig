@@ -55,6 +55,8 @@
 
 
     <link rel="stylesheet" type="text/css" href="/assets/css/page-city.css">
+    <!-- Modals styles (shared with main page) -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/main-page.css">
 </head>
 <body>
 <div id="bg-robots"></div>
@@ -83,6 +85,16 @@
                     </div>
 
                     <a class="btn-primary side-quote" href="/#quote">Get a Quote</a>
+                </div>
+                
+                <!-- CTA Buttons (PC only) - под сайдбаром -->
+                <div class="side-cta-buttons" id="sideCTAButtons">
+                    <button class="side-btn-callback" id="sideCallMeBack" type="button">
+                        <i class="fa-solid fa-phone"></i> Call me back
+                    </button>
+                    <button class="side-btn-price" id="sidePriceBtn" type="button">
+                        <i class="fa-solid fa-tag"></i> Price
+                    </button>
                 </div>
             </aside>
 
@@ -301,6 +313,70 @@
                 <span>Free estimate</span>
             </div>
         </a>
+    </div>
+</div>
+
+<!-- Quick Quote Modal (same as main page) -->
+<div class="quick-quote-overlay" id="quickQuoteOverlay">
+    <div class="quick-quote-modal" id="quickQuoteModal">
+        <button class="quick-quote-close" id="quickQuoteClose" type="button" aria-label="Close">&times;</button>
+        <h3 class="quick-quote-title">Quick callback request</h3>
+        <p class="quick-quote-subtitle">Leave your number and we'll call you back shortly</p>
+
+        <form id="quickQuoteForm" class="quick-quote-form">
+            {{ csrf_field() }}
+            <div class="quick-quote-input-wrap">
+                <input type="tel" id="quickPhone" name="phone" placeholder="Your phone number" required pattern="^[0-9+\s()-]{10,20}$" autocomplete="tel">
+            </div>
+
+            <div class="quick-quote-buttons">
+                <button type="submit" class="btn-quick btn-quick-submit" id="btnQuickSubmit">
+                    <span class="btn-quick-text">Send</span>
+                    <span class="btn-quick-success" style="display:none;">✓</span>
+                </button>
+                <a href="https://wa.me/16725006060" target="_blank" rel="noopener" class="btn-quick btn-quick-whatsapp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </form>
+
+        <div class="quick-quote-success" id="quickQuoteSuccess" style="display:none;">
+            <div class="success-checkmark">✓</div>
+            <p class="success-message">We'll contact you shortly</p>
+        </div>
+    </div>
+</div>
+
+<!-- Price Modal -->
+<div class="price-modal-overlay" id="priceModalOverlay">
+    <div class="price-modal" id="priceModal">
+        <button class="price-modal-close" id="priceModalClose" type="button" aria-label="Close">&times;</button>
+        <h3 class="price-modal-title">Our Pricing</h3>
+        
+        <ul class="price-list">
+            <li class="price-list-item">Minimum service call <span>$120</span></li>
+            <li class="price-list-item">Gutter Cleaning <span>from $150</span></li>
+            <li class="price-list-item">Window Washing <span>from $150</span></li>
+            <li class="price-list-item">Pressure Washing <span>from $200</span></li>
+            <li class="price-list-item">Moss Removal <span>from $400</span></li>
+            <li class="price-list-item">Junk Removal <span>from $150</span></li>
+            <li class="price-list-item">Handyman Services <span>from $120</span></li>
+        </ul>
+        
+        <p class="price-note">Call us today to find out what special offers and discounts are available.</p>
+        
+        <div class="price-buttons">
+            <button class="price-btn price-btn-callback" id="priceCallMeBack" type="button">
+                <i class="fa-solid fa-phone"></i> Call me back
+            </button>
+            <a class="price-btn price-btn-call" href="tel:+16725006060">
+                <i class="fa-solid fa-phone-volume"></i> Call now
+            </a>
+            <a class="price-btn price-btn-quote" href="/#quote" data-page-link="quote">
+                <i class="fa-solid fa-file-lines"></i> Get your price in a minute
+            </a>
+        </div>
     </div>
 </div>
 

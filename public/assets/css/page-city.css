@@ -880,6 +880,69 @@ footer a:hover{ color: white; }
     font-size: 1.05rem;
 }
 
+/* ===== Side CTA Buttons (PC only) ===== */
+.side-cta-buttons {
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+    width: 100%;
+}
+
+@media (min-width: 861px) {
+    .side-cta-buttons {
+        display: flex;
+    }
+}
+
+.side-btn-callback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.35);
+    font-family: inherit;
+}
+
+.side-btn-callback:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(34, 197, 94, 0.5);
+}
+
+.side-btn-price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px 20px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(249, 115, 22, 0.35);
+    font-family: inherit;
+}
+
+.side-btn-price:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(249, 115, 22, 0.5);
+}
+
 /* ===== Lightbox modal for photos ===== */
 .photo-modal{
     position: fixed;
