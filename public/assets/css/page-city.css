@@ -1461,3 +1461,103 @@ footer a:hover{ color: white; }
     background: #e2e8f0;
     margin: 6px 0;
 }
+/* ===== Cities Modal Styles ===== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s;
+    padding: 16px;
+}
+
+.modal.open { opacity: 1; visibility: visible; }
+
+.modal-content {
+    background: white;
+    width: 100%;
+    max-width: 720px;
+    max-height: 92vh;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    padding: 20px 32px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.modal-header h3 { margin: 0; font-size: 1.35rem; }
+
+.modal-close {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.16);
+    border: 1px solid rgba(255,255,255,0.28);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.18);
+    color: #fff;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.modal-close:hover {
+    background: rgba(255,255,255,0.24);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px rgba(0,0,0,0.22);
+}
+
+.modal-close:active { transform: scale(0.96); }
+
+.modal-close:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255,255,255,0.22), 0 10px 24px rgba(0,0,0,0.18);
+}
+
+.modal-body { 
+    padding: 36px; 
+    overflow-y: auto; 
+    max-height: calc(92vh - 80px); 
+}
+
+.cities-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 20px; 
+}
+
+.city { 
+    padding: 20px; 
+    background: white; 
+    border-radius: 12px; 
+    text-align: center; 
+    font-weight: 800; 
+    border: 1px solid var(--primary-l); 
+    transition: all 0.38s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.city:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.35), 0 0 15px rgba(251, 191, 36, 0.4);
+}
