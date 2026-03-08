@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Port Moody BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/port_moody#webpage",
+      "url": "https://cgc-services.ca/cities/port_moody",
+      "name": "Gutter Cleaning in Port Moody BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/port_moody#service" },
+      "description": "Professional gutter cleaning in Port Moody, BC. Mountain and forest home protection for Heritage Mountain, Newport Village, Suter Brook, College Park, Glenayre, and surrounding areas.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/port_moody#service",
+      "name": "Gutter Cleaning in Port Moody",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Port Moody" },
+      "url": "https://cgc-services.ca/cities/port_moody",
+      "description": "Gutter cleaning for homes on steep terrain near dense tree cover and the inlet. Compacted debris removal, vertical outlet clearing, channel system evaluation, and attachment integrity assessment.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/port_moody",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/port_moody#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Port Moody", "item": "https://cgc-services.ca/cities/port_moody" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
     <h1>Gutter Cleaning in Port Moody — Mountain & Forest Home Protection</h1>

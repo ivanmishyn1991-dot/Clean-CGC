@@ -1,6 +1,55 @@
 {% extends "page.html.twig" %}
 
-{% block title %}utter Cleaning in Surrey BC | Clean Gutters Crew{% endblock %}
+{% block title %}Gutter Cleaning in Surrey BC | Clean Gutters Crew{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/surrey#webpage",
+      "url": "https://cgc-services.ca/cities/surrey",
+      "name": "Gutter Cleaning in Surrey BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/surrey#service" },
+      "description": "Professional gutter cleaning in Surrey, BC. Serving Newton, Whalley, Guildford, Fleetwood, Cloverdale, and all Surrey neighbourhoods. Protect your home from water damage with regular gutter maintenance.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/surrey#service",
+      "name": "Gutter Cleaning in Surrey",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Surrey" },
+      "url": "https://cgc-services.ca/cities/surrey",
+      "description": "Complete gutter cleaning for Surrey homes including manual debris removal, downspout inspection, water flow testing, and before-and-after photos. Protects against roof leaks, fascia rot, and basement dampness.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/surrey",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 340
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/surrey#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Surrey", "item": "https://cgc-services.ca/cities/surrey" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
 
 {% block content %}
 

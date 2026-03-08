@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Burnaby BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/burnaby#webpage",
+      "url": "https://cgc-services.ca/cities/burnaby",
+      "name": "Gutter Cleaning in Burnaby BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/burnaby#service" },
+      "description": "Professional gutter cleaning service in Burnaby, BC. Clean Gutters Crew helps homeowners prevent clogged gutters, water overflow, and moisture-related exterior damage. Prices start from $150 depending on property size, access, and gutter condition.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/burnaby#service",
+      "name": "Gutter Cleaning in Burnaby",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Burnaby" },
+      "url": "https://cgc-services.ca/cities/burnaby",
+      "description": "Residential gutter cleaning service for homes in Burnaby, British Columbia. Removes leaves, moss, needles, and debris so water can drain properly and reduce the risk of overflow and exterior water damage.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/burnaby",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/burnaby#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Burnaby", "item": "https://cgc-services.ca/cities/burnaby" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
     <h1>Gutter Cleaning in Burnaby — Reliable Protection for Your Home</h1>
 

@@ -1,6 +1,54 @@
 {% extends "page.html.twig" %}
 
-{% block title %}Gutter Cleaning in North Vancouver BC | Clean Gutters Crew
+{% block title %}Gutter Cleaning in North Vancouver BC | Clean Gutters Crew{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/north_vancouver#webpage",
+      "url": "https://cgc-services.ca/cities/north_vancouver",
+      "name": "Gutter Cleaning in North Vancouver BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/north_vancouver#service" },
+      "description": "Professional gutter cleaning in North Vancouver, BC. Protect your home from rain, moss, and water damage. Serving Upper Lonsdale, Lynn Valley, Deep Cove, and all North Vancouver neighbourhoods.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/north_vancouver#service",
+      "name": "Gutter Cleaning in North Vancouver",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "North Vancouver" },
+      "url": "https://cgc-services.ca/cities/north_vancouver",
+      "description": "Gutter cleaning for hillside and forest-adjacent properties in North Vancouver. Complete debris removal, downspout inspection, safe equipment for multi-level homes, and preventive maintenance.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/north_vancouver",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/north_vancouver#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "North Vancouver", "item": "https://cgc-services.ca/cities/north_vancouver" }
+      ]
+    }
+  ]
+}
+</script>
 {% endblock %}
 
 {% block content %}

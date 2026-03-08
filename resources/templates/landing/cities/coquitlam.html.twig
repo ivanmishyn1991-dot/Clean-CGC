@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Coquitlam BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/coquitlam#webpage",
+      "url": "https://cgc-services.ca/cities/coquitlam",
+      "name": "Gutter Cleaning in Coquitlam BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/coquitlam#service" },
+      "description": "Professional gutter cleaning in Coquitlam, BC. Protect your home from water damage with regular maintenance. Prices starting at $180 for standard homes. Serving all Coquitlam neighbourhoods.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/coquitlam#service",
+      "name": "Gutter Cleaning in Coquitlam",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Coquitlam" },
+      "url": "https://cgc-services.ca/cities/coquitlam",
+      "description": "Residential gutter cleaning in Coquitlam. Thorough debris removal, downspout flushing, and full inspection to prevent roof leaks, basement flooding, and foundation problems.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/coquitlam",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 180
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/coquitlam#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Coquitlam", "item": "https://cgc-services.ca/cities/coquitlam" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
     <h1>Gutter Cleaning in Delta: Professional Gutters Cleaning Services for Your Home</h1>

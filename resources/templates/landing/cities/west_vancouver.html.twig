@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in West Vancouver BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/west_vancouver#webpage",
+      "url": "https://cgc-services.ca/cities/west_vancouver",
+      "name": "Gutter Cleaning in West Vancouver BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/west_vancouver#service" },
+      "description": "Professional gutter cleaning in West Vancouver, BC. Expert care for homes in British Properties, Cypress Park, and North Shore communities. Prices starting at $180 for standard homes.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/west_vancouver#service",
+      "name": "Gutter Cleaning in West Vancouver",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "West Vancouver" },
+      "url": "https://cgc-services.ca/cities/west_vancouver",
+      "description": "Complete gutter cleaning for West Vancouver homes exposed to coastal climate with over 1,500 mm annual precipitation. Thorough debris removal, downspout cleaning, gutter inspection, and eco-friendly practices.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/west_vancouver",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 180
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/west_vancouver#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "West Vancouver", "item": "https://cgc-services.ca/cities/west_vancouver" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
     <h1>Gutters Cleaning in West Vancouver: Protect Your Home with Expert Care</h1>

@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Ladner BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/ladner#webpage",
+      "url": "https://cgc-services.ca/cities/ladner",
+      "name": "Gutter Cleaning in Ladner BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/ladner#service" },
+      "description": "Professional gutter cleaning in Ladner, BC. Reliable service for riverside homes in Ladner Village, Hawthorne, Port Guichon, East Ladner, West Ladner, and surrounding neighbourhoods.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/ladner#service",
+      "name": "Gutter Cleaning in Ladner",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Ladner" },
+      "url": "https://cgc-services.ca/cities/ladner",
+      "description": "Gutter maintenance for homes near the Fraser River and agricultural land. Manual debris removal, downspout clearing, visual inspection for loosened brackets and drainage inefficiencies.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/ladner",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/ladner#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Ladner", "item": "https://cgc-services.ca/cities/ladner" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
     <h1>Gutter Cleaning in Ladner &mdash; Reliable Service
         for Riverside Homes</h1>

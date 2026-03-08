@@ -17,7 +17,35 @@ Marketing website for Clean Gutters Crew - a local exterior cleaning company ser
 
 ### December 2025
 
-#### Schema.org Implementation (COMPLETED)
+#### Schema.org Implementation - City Pages (COMPLETED)
+- **17 City Pages:** Each city page now has unique Schema.org `@graph`:
+  - `WebPage` with city-specific description
+  - `Service` (Gutter Cleaning in [City])
+  - `Offer` with `minPrice` based on page content
+  - `BreadcrumbList` (Home > [City])
+
+**City Pages with Schema:**
+| City | minPrice | Notes |
+|------|----------|-------|
+| Burnaby | $150 | Эталон |
+| Vancouver | $150 | |
+| Surrey | $340 | Цена из контента страницы |
+| Richmond | $150 | |
+| Coquitlam | $180 | Цена из контента страницы |
+| Delta | $180 | Цена из контента страницы |
+| Langley | $150 | |
+| North Vancouver | $150 | |
+| West Vancouver | $180 | Цена из контента страницы |
+| New Westminster | $180 | Цена из контента страницы |
+| Maple Ridge | $150 | |
+| Pitt Meadows | $150 | |
+| Port Coquitlam | $150 | |
+| Port Moody | $150 | |
+| White Rock | $150 | |
+| Ladner | $150 | |
+| Tsawwassen | $150 | |
+
+#### Schema.org Implementation - Service Pages (COMPLETED)
 - **Main Page:** Complete `@graph` with LocalBusiness, WebSite, WebPage, FAQPage (14 questions), and 6 Service definitions
 - **Service Pages:** Each of 6 service pages now has unique Schema.org:
   - `WebPage` with unique description
@@ -63,12 +91,14 @@ Marketing website for Clean Gutters Crew - a local exterior cleaning company ser
 
 ## Key Files Modified This Session
 - `resources/templates/page.html.twig` - Added `{% block schema %}` support
-- `resources/templates/landing/services/gutter_cleaning.html.twig` - Schema.org added
-- `resources/templates/landing/services/window_washing.html.twig` - Schema.org added
-- `resources/templates/landing/services/pressure_washing.html.twig` - Schema.org added
-- `resources/templates/landing/services/moss_removal.html.twig` - Schema.org added
-- `resources/templates/landing/services/junk_removal.html.twig` - Schema.org added
-- `resources/templates/landing/services/handyman_services.html.twig` - Schema.org added
+- `resources/templates/landing/services/*.html.twig` - 6 service pages with Schema.org
+- `resources/templates/landing/cities/*.html.twig` - 17 city pages with Schema.org:
+  - burnaby.html.twig, vancouver.html.twig, surrey.html.twig
+  - richmond.html.twig, coquitlam.html.twig, delta.html.twig
+  - langley.html.twig, north_vancouver.html.twig, west_vancouver.html.twig
+  - new_westminster.html.twig, maple_ridge.html.twig, pitt_meadows.html.twig
+  - port_coquitlam.html.twig, port_moody.html.twig, white_rock.html.twig
+  - ladner.html.twig, tsawwassen.html.twig
 
 ## Backlog / Future Tasks
 

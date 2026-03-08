@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Vancouver BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/vancouver#webpage",
+      "url": "https://cgc-services.ca/cities/vancouver",
+      "name": "Gutter Cleaning in Vancouver BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/vancouver#service" },
+      "description": "Professional gutter cleaning in Vancouver, BC. Protect your home from rain, moss, and water damage. We serve West Point Grey, Kitsilano, Dunbar, Kerrisdale, Mount Pleasant, and all Vancouver neighbourhoods.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/vancouver#service",
+      "name": "Gutter Cleaning in Vancouver",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Vancouver" },
+      "url": "https://cgc-services.ca/cities/vancouver",
+      "description": "Residential gutter cleaning for Vancouver homes. Removes leaves, pine needles, moss, and debris to prevent overflow, roof leaks, mold growth, and foundation damage in Vancouver's heavy rainfall climate.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/vancouver",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/vancouver#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Vancouver", "item": "https://cgc-services.ca/cities/vancouver" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
     <h1>Gutter Cleaning in Vancouver — Protect Your Home from Rain, Moss, and Water Damage</h1>

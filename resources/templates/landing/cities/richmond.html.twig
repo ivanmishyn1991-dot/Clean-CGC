@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Richmond BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/richmond#webpage",
+      "url": "https://cgc-services.ca/cities/richmond",
+      "name": "Gutter Cleaning in Richmond BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/richmond#service" },
+      "description": "Professional gutter cleaning in Richmond, BC. Reliable protection for coastal homes in Steveston, Broadmoor, Seafair, Terra Nova, and all Richmond neighbourhoods. Prevent water intrusion and protect exterior materials.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/richmond#service",
+      "name": "Gutter Cleaning in Richmond",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Richmond" },
+      "url": "https://cgc-services.ca/cities/richmond",
+      "description": "Gutter cleaning service for Richmond homes exposed to coastal air and frequent rainfall. Complete debris removal, downspout clearing, water-flow testing, and visual system inspection.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/richmond",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/richmond#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Richmond", "item": "https://cgc-services.ca/cities/richmond" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
     <h1>Gutter Cleaning in Richmond — Reliable Protection for Coastal Homes</h1>

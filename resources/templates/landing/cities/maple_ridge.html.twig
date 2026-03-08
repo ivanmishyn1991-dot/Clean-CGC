@@ -1,6 +1,55 @@
 {% extends "page.html.twig" %}
 
-{% block title %}{% endblock %}
+{% block title %}Gutter Cleaning in Maple Ridge BC | Clean Gutters Crew{% endblock %}
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/maple_ridge#webpage",
+      "url": "https://cgc-services.ca/cities/maple_ridge",
+      "name": "Gutter Cleaning in Maple Ridge BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/maple_ridge#service" },
+      "description": "Professional gutter cleaning in Maple Ridge, BC. Serving Albion, Silver Valley, Webster's Corners, and all Maple Ridge neighbourhoods. Protect your home from heavy rainfall and seasonal debris.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/maple_ridge#service",
+      "name": "Gutter Cleaning in Maple Ridge",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Maple Ridge" },
+      "url": "https://cgc-services.ca/cities/maple_ridge",
+      "description": "Complete gutter cleaning for Maple Ridge homes surrounded by forests and dense vegetation. Includes debris removal using eco-friendly methods, downspout flushing, leak inspection, and optional gutter guard installation.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/maple_ridge",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/maple_ridge#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Maple Ridge", "item": "https://cgc-services.ca/cities/maple_ridge" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
 
 {% block content %}
 

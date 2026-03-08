@@ -2,6 +2,55 @@
 
 {% block title %}Gutter Cleaning in Langley BC | Clean Gutters Crew{% endblock %}
 
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://cgc-services.ca/cities/langley#webpage",
+      "url": "https://cgc-services.ca/cities/langley",
+      "name": "Gutter Cleaning in Langley BC | Clean Gutters Crew",
+      "isPartOf": { "@id": "https://cgc-services.ca/#website" },
+      "about": { "@id": "https://cgc-services.ca/cities/langley#service" },
+      "description": "Professional gutter cleaning in Langley, BC. Protect your home investment in Willowbrook, Brookswood, Walnut Grove, and all Langley neighbourhoods. Over 1,200 mm of rain annually makes gutter maintenance essential.",
+      "inLanguage": "en-CA"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cgc-services.ca/cities/langley#service",
+      "name": "Gutter Cleaning in Langley",
+      "serviceType": "Gutter Cleaning",
+      "provider": { "@id": "https://cgc-services.ca/#business" },
+      "areaServed": { "@type": "City", "name": "Langley" },
+      "url": "https://cgc-services.ca/cities/langley",
+      "description": "Complete interior and exterior gutter cleaning for Langley homes. Includes high-powered vacuum system, full inspection and report, eco-friendly debris disposal, and same-day service available.",
+      "offers": {
+        "@type": "Offer",
+        "url": "https://cgc-services.ca/cities/langley",
+        "priceCurrency": "CAD",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "priceCurrency": "CAD",
+          "minPrice": 150
+        },
+        "availability": "https://schema.org/InStock"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cgc-services.ca/cities/langley#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://cgc-services.ca/" },
+        { "@type": "ListItem", "position": 2, "name": "Langley", "item": "https://cgc-services.ca/cities/langley" }
+      ]
+    }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
     <h1>Gutter Cleaning Langley – Protect Your Home Investment with Guttres Cleaning</h1>
