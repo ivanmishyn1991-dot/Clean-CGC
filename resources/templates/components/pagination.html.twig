@@ -1,0 +1,18 @@
+<span class="tm-pagination-label">Page</span>
+<nav aria-label="Page navigation" class="d-inline-block">
+    <ul class="pagination tm-pagination">
+        {% for p in range(1, paginator.totalPages) %}
+            {% set tp = paginator.totalPages %}
+            {% set cp = paginator.currentPage %}
+
+            {% if p in [1,2, cp-1, cp, cp+1, tp-1, tp] or tp <= 8 %}
+                <li class="page-item active"><a class="page-link" href="{{ url }}{{ p }}">{{ p }}</a></li>
+            {% endif %}
+
+            {% if ((p == 3 and cp > 4) or (p == tp-2 and cp  < tp-3)) and tp > 8 %}
+                <li class="page-item"><span class="tm-dots d-block">...</span></li>
+            {% endif %}
+
+        {% endfor %}
+    </ul>
+</nav>

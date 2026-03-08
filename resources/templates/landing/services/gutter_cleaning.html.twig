@@ -1,0 +1,177 @@
+{% extends "page.html.twig" %}
+
+{% block title %}Gutter Cleaning in Metro Vancouver BC | Clean Gutters Crew{% endblock %}
+
+{% block content %}
+    <section class="gutter-section">
+
+        <h1>1. Gutter Cleaning</h1>
+
+        <img style="width: 100%" src="/assets/images/services/Gutters.png">
+        
+        <h2>Why It Is Critical</h2>
+
+        <p>
+            Your gutters are your home’s drainage system. When they are clogged with leaves, pine needles, and debris,
+            water stops flowing properly and begins looking for a way inside your home’s structure.
+            In a rainy climate like British Columbia, this becomes especially dangerous.
+        </p>
+
+        <p>Clogged gutters:</p>
+
+        <ul>
+            <li>Cause roof leaks</li>
+            <li>Damage fascia and soffits</li>
+            <li>Saturate foundation walls</li>
+            <li>Lead to basement moisture</li>
+            <li>Create ideal conditions for mold</li>
+        </ul>
+
+        <p>
+            Regular gutter cleaning is not cosmetic maintenance — it is structural protection.
+        </p>
+
+        <h2>Risks You Prevent</h2>
+
+        <ul>
+            <li>Roof leaks</li>
+            <li>Foundation damage</li>
+            <li>Basement mold</li>
+            <li>Ice buildup in winter</li>
+            <li>Siding deterioration</li>
+            <li>Pest infestations</li>
+        </ul>
+
+        <h2>Financial Impact</h2>
+
+        <p>The cost of maintenance is a fraction of:</p>
+
+        <ul>
+            <li>Roof replacement</li>
+            <li>Mold remediation</li>
+            <li>Insulation repair</li>
+            <li>Structural foundation repairs</li>
+        </ul>
+
+        <h2>Psychological Benefit</h2>
+
+        <p>During heavy rainstorms, you feel calm.</p>
+        <p>No anxiety about hidden leaks.</p>
+        <p>No fear of unexpected repair bills.</p>
+
+        <h2>Table</h2>
+
+        <div class="table-wrapper">
+            <table class="gutter-table">
+                <thead>
+                <tr>
+                    <th>If Ignored</th>
+                    <th>What Happens</th>
+                    <th>Regular Cleaning Provides</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Debris accumulates</td>
+                    <td>Water overflows</td>
+                    <td>Controlled drainage</td>
+                </tr>
+                <tr>
+                    <td>Standing water</td>
+                    <td>Wood rot</td>
+                    <td>Protection for fascia &amp; soffits</td>
+                </tr>
+                <tr>
+                    <td>Winter freezing</td>
+                    <td>Gutter deformation</td>
+                    <td>Longer system lifespan</td>
+                </tr>
+                <tr>
+                    <td>Water near foundation</td>
+                    <td>Cracks &amp; damp basement</td>
+                    <td>Structural protection</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .gutter-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+            line-height: 1.7;
+            font-family: Inter, sans-serif;
+        }
+
+        .gutter-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .gutter-section h2 {
+            font-size: 20px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .gutter-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .gutter-section li {
+            margin-bottom: 8px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .gutter-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .gutter-table thead {
+            background: #f4f6f8;
+        }
+
+        .gutter-table th,
+        .gutter-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .gutter-table th {
+            font-weight: 600;
+        }
+
+        .gutter-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+            .gutter-section {
+                padding: 25px 15px;
+            }
+
+            .gutter-section h1 {
+                font-size: 22px;
+            }
+
+            .gutter-section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+{% endblock %}

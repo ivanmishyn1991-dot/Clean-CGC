@@ -1,0 +1,182 @@
+{% extends "page.html.twig" %}
+
+{% block title %}Handyman Repairs in Metro Vancouver BC | Clean Gutters Crew{% endblock %}
+
+{% block content %}
+    <section class="handyman-section">
+
+        <h1>Handyman Services </h1>
+
+        <img style="width: 100%" src="/assets/images/services/Handyman.png">
+
+        <h2>Why Choose Us</h2>
+
+        <p>
+            We do not just “fix things.” We prevent small issues from turning into expensive problems.
+        </p>
+
+        <ul>
+            <li>Fast response</li>
+            <li>Clean, precise work</li>
+            <li>Quality materials</li>
+            <li>Clear recommendations</li>
+            <li>Transparent pricing</li>
+        </ul>
+
+        <p>
+            Small repairs today prevent major repairs tomorrow.
+        </p>
+
+        <h2>Why You Should Not Delay Minor Issues</h2>
+
+        <p>
+            A small crack, loose fixture, dripping pipe, or damaged board can:
+        </p>
+
+        <ul>
+            <li>Expand over time</li>
+            <li>Allow moisture inside</li>
+            <li>Weaken structural elements</li>
+            <li>Lead to costly repairs</li>
+        </ul>
+
+        <p>
+            Small problems rarely stay small.
+        </p>
+
+        <h2>What Happens If Ignored</h2>
+
+        <ul>
+            <li>Moisture intrusion</li>
+            <li>Wood rot</li>
+            <li>Drywall damage</li>
+            <li>Mold growth</li>
+            <li>Decreased home appeal</li>
+        </ul>
+
+        <h2>Financial Logic</h2>
+
+        <p>Timely maintenance:</p>
+
+        <ul>
+            <li>Extends lifespan of materials</li>
+            <li>Preserves structure</li>
+            <li>Prevents large expenses</li>
+            <li>Maintains property value</li>
+        </ul>
+
+        <h2>Table</h2>
+
+        <div class="table-wrapper">
+            <table class="service-table">
+                <thead>
+                <tr>
+                    <th>If Ignored</th>
+                    <th>What Happens</th>
+                    <th>Timely Service Provides</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Small crack</td>
+                    <td>Structural expansion</td>
+                    <td>Early control</td>
+                </tr>
+                <tr>
+                    <td>Leak</td>
+                    <td>Interior moisture</td>
+                    <td>Dry construction</td>
+                </tr>
+                <tr>
+                    <td>Loose fixture</td>
+                    <td>Breakage</td>
+                    <td>Stability</td>
+                </tr>
+                <tr>
+                    <td>Delayed repair</td>
+                    <td>Major costs</td>
+                    <td>Long-term savings</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .handyman-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+            line-height: 1.7;
+            font-family: Inter, sans-serif;
+        }
+
+        .handyman-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .handyman-section h2 {
+            font-size: 20px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .handyman-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .handyman-section li {
+            margin-bottom: 8px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .service-table thead {
+            background: #f4f6f8;
+        }
+
+        .service-table th,
+        .service-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .service-table th {
+            font-weight: 600;
+        }
+
+        .service-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .handyman-section {
+                padding: 25px 15px;
+            }
+
+            .handyman-section h1 {
+                font-size: 22px;
+            }
+
+            .handyman-section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+{% endblock %}

@@ -1,0 +1,11 @@
+{
+    "name": "double-null/cgc-landing",
+    "autoload": {"psr-4": {"App\\": "app/"}},
+    "require": {
+        "flightphp/core": "^3.11",
+        "symfony/dotenv": "^6.4",
+        "symfony/cache": "^6.4",
+        "doctrine/orm": "^3.3",
+        "twig/twig": "^3.23"
+    }
+}

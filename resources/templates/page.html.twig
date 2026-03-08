@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4371677243055821');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4371677243055821&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Gutter cleaning, window washing, moss removal and more services in Metro Vancouver"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Robot icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    {% block styles %}{% endblock %}
+
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!-- Schema.org для локального бизнеса -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Clean Gutters Crew",
+            "telephone": "+16725006060",
+            "email": "cgc.services.bc@gmail.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "BC",
+                "addressCountry": "CA"
+            },
+            "areaServed": "Metro Vancouver",
+
+            "priceRange": "$$",
+            "openingHours": "Mo-Su 07:00-20:00"
+        }
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="/assets/css/page-city.css">
+</head>
+<body>
+<div id="bg-robots"></div>
+
+{% include 'landing/components/header.html.twig' %}
+
+<main>
+    <section id="city">
+        <div class="container">
+            <aside class="side-panel left side-services" aria-label="Services panel">
+                <div class="side-card">
+                    <button class="services-acc-btn" id="servicesAccBtn" type="button" aria-expanded="false" aria-controls="servicesAccPanel">
+                        <span class="label"><span class="dot"></span>Our services</span>
+                        <span class="chev">⌄</span>
+                    </button>
+
+                    <div class="services-acc-panel" id="servicesAccPanel" aria-label="Services list">
+                        <div class="services-links" aria-label="Services (links to main site services section)">
+                            <a class="service-link" href="/services/gutter_cleaning">Gutter Cleaning</a>
+                            <a class="service-link" href="/services/window_washing">Window Washing</a>
+                            <a class="service-link" href="/services/pressure_washing">Pressure Washing</a>
+                            <a class="service-link" href="/services/moss_removal">Moss Removal</a>
+                            <a class="service-link" href="/services/junk_removal">Junk Removal</a>
+                            <a class="service-link" href="/services/handyman_services">Handyman Services</a>
+                        </div>
+                    </div>
+
+                    <a class="btn-primary side-quote" href="/#quote">Get a Quote</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT: fixed work photos -->
+            <aside class="side-panel right side-work" aria-label="Work photos panel">
+                <div class="side-card">
+                    <div style="font-family:'Poppins',sans-serif; font-size:1.05rem; font-weight:900; color:var(--gray-8); margin-bottom:12px; text-align:left;">
+                        Before and after
+                    </div>
+
+                    <div class="work-grid">
+                        <div class="work-tile">
+                            <button class="work-open" type="button" aria-label="Open photo">
+                                <img class="work-photo" src="https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=1200&q=80" alt="Before photo 1">
+                            </button>
+                        </div>
+                        <div class="work-tile">
+                            <button class="work-open" type="button" aria-label="Open photo">
+                                <img class="work-photo" src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1200&q=80" alt="After photo 1">
+                            </button>
+                        </div>
+                        <div class="work-tile">
+                            <button class="work-open" type="button" aria-label="Open photo">
+                                <img class="work-photo" src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80" alt="Before photo 2">
+                            </button>
+                        </div>
+                        <div class="work-tile">
+                            <button class="work-open" type="button" aria-label="Open photo">
+                                <img class="work-photo" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="After photo 2">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="work-note">
+                        If you want to see more photos of our work, visit our
+                        <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener">Facebook</a>.
+                    </div>
+                </div>
+            </aside>
+
+            <div class="seo-card">
+                <article class="article-doc">
+                    {% block content %}{% endblock %}
+                </article>
+            </div>
+
+            <div class="seo-cta-outside">
+               <a href="/#quote" class="quote-btn">Get a quote in 1 minute</a>
+            </div>
+
+        </div>
+    </section>
+</main>
+
+<footer role="contentinfo" aria-label="Site footer">
+    <div class="container">
+        <div style="max-width:980px; margin:0 auto;">
+            <div style="font-family:'Poppins',sans-serif; font-size:2.1rem; line-height:1.1; font-weight:800; color:#fff;">
+                Clean Gutters Crew
+            </div>
+
+            <p style="margin:18px 0 18px; font-size:1.06rem; color:rgba(255,255,255,0.92); font-weight:700;">
+                Local exterior cleaning for Metro Vancouver homeowners
+            </p>
+
+            <p style="font-size:1.06rem; line-height:1.7; color:rgba(255,255,255,0.92); font-weight:700;">
+                Phone:
+                <a href="tel:+16725006060">+1 (672) 500-6060</a>
+                <span style="opacity:0.75;">•</span>
+                Text:
+                <a href="sms:+16725006060">SMS +1 (672) 500-6060</a>
+                <span style="opacity:0.75;">•</span>
+                Email:
+                <a href="mailto:cgc.services.bc@gmail.com">cgc.services.bc@gmail.com</a>
+            </p>
+
+            <p style="margin-top:16px; font-size:1.02rem; line-height:1.7; color:rgba(255,255,255,0.90); font-weight:700;">
+                Service area: Metro Vancouver, BC, Canada<br>
+                Hours: Mon–Sun 7:00am–8:00pm<br>
+                Fully insured
+            </p>
+
+            <div style="margin-top:26px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+                <a href="/docs/privacy" style="color:var(--accent); font-weight:900; text-decoration:none;">Privacy Policy</a>
+                <span style="color:rgba(255,255,255,0.55);">•</span>
+                <a href="/docs/terms" style="color:var(--accent); font-weight:900; text-decoration:none;">Terms of Service</a>
+                <span style="color:rgba(255,255,255,0.55);">•</span>
+                <a href="#quote" data-page-link="quote" style="color:var(--accent); font-weight:900; text-decoration:none;">Get a Quote</a>
+            </div>
+
+            <p style="margin-top:42px; color:rgba(203,213,225,0.95); font-size:0.98rem; font-weight:700;">
+                © 2026 Clean Gutters Crew. All rights reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<div class="photo-modal" id="photoModal" aria-hidden="true">
+    <div class="photo-modal-inner" role="dialog" aria-modal="true" aria-label="Photo preview">
+        <button class="photo-modal-close" id="photoModalClose" type="button" aria-label="Close">✕</button>
+        <img class="photo-modal-img" id="photoModalImg" src="" alt="Photo preview">
+    </div>
+</div>
+
+
+<!-- CGC Robot (inserted into main file) -->
+<div class="cgc-robot-wrap" id="cgcRobotWrap" aria-label="CGC Robot contact widget">
+    <div class="cgc-social-panel" aria-label="Quick contacts">
+        <a class="cgc-social-item fb" href="https://www.facebook.com/profile.php?id=61587613647830" target="_blank" rel="noopener" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+        <a class="cgc-social-item ig" href="https://www.instagram.com/cgcservices.ca/" target="_blank" rel="noopener" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a class="cgc-social-item wa" href="https://wa.me/16725006060" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a class="cgc-social-item tg" href="https://t.me/CGC_services" target="_blank" rel="noopener" aria-label="Telegram">
+            <i class="fa-brands fa-telegram"></i>
+        </a>
+    </div>
+
+    <button class="cgc-robot-btn" id="cgcRobotBtn" type="button" aria-expanded="false" aria-label="Open contacts">
+        <img
+                class="cgc-robot-img"
+                src="/assets/images/social-robot.png"
+                alt="CGC Robot"
+        />
+        <div class="cgc-robot-bubble" id="cgcRobotBubble">Tap me</div>
+    </button>
+    <button class="cgc-robot-hit" id="cgcRobotHit" type="button" aria-label="Open contacts"></button>
+</div>
+
+<script src="/assets/js/page-city.js?rand={{ random() }}"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,484 @@
+{% extends "template.html.twig" %}
+
+{% block content %}
+
+    <main>
+        <!-- AEO: Hero Section with H1 and key highlights -->
+        <section class="aeo-hero reveal">
+            <div class="container" style="text-align:center; min-height: 80vh">
+                <h1>Gutter cleaning, window washing, pressure washing and moss removal in Metro Vancouver</h1>
+                <p class="hero-lead">
+                    Clean Gutters Crew helps homeowners across Metro Vancouver with gutter cleaning, window washing, pressure washing, moss removal, junk removal and small exterior handyman work. We offer fast quotes, insured service, clear pricing before the job starts, and flexible scheduling across Burnaby, Surrey, Vancouver, Richmond, Coquitlam, Langley and nearby communities.
+                </p>
+                <div class="hero-points" aria-label="Key service highlights">
+                    <div class="hero-point">Fast local quotes</div>
+                    <div class="hero-point">Fully insured</div>
+                    <div class="hero-point">Pay after the job</div>
+                    <div class="hero-point">Metro Vancouver service</div>
+                </div>
+                <div class="cta-row" style="margin-top:28px;">
+                    <button class="btn-callback" id="btnCallMeBack" type="button">Call me back</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section - Combined block -->
+        <section id="about" class="reveal">
+            <div class="container">
+                <h2>Local exterior cleaning that's done right</h2>
+
+                <!-- About text - unified block without separators -->
+                <div class="about-text" style="max-width: 900px; margin: 0 auto 32px; text-align: center;">
+                    <p style="margin-bottom: 16px;">
+                        Clean Gutters Crew is a local exterior cleaning team serving homeowners across Metro Vancouver. We work in Burnaby, Surrey, Coquitlam, Langley, Richmond, Vancouver and nearby communities, helping people keep their homes clean, safe, and well-maintained all year round.
+                    </p>
+                    <p style="margin-bottom: 16px;">
+                        We specialize in gutter cleaning, window washing, moss removal, pressure washing, driveway cleaning, and other exterior services. Our goal is simple: to provide reliable, honest work and leave every property looking better than before.
+                    </p>
+                    <p style="margin-bottom: 16px;">
+                        As a local team, we understand the challenges that homes in British Columbia face — heavy rain, moss growth, clogged gutters, and dirty siding. Regular exterior maintenance is not just about appearance. It helps prevent water damage, roof issues, and expensive repairs.
+                    </p>
+                    <p>
+                        We focus on clear communication, fair pricing, and careful work. Whether it's a small house or a larger property, we treat every job with the same attention to detail.
+                    </p>
+                </div>
+
+                <!-- Why choose us - inside About section -->
+                <h3 style="text-align: center; font-size: 1.5rem; margin-bottom: 24px; color: var(--primary);">Why homeowners choose us</h3>
+                <div class="answer-grid" style="margin-bottom: 32px;">
+                    <div class="answer-card">
+                        <h4>Clear pricing</h4>
+                        <p>We confirm the total price before the work starts, so there are no surprises.</p>
+                    </div>
+                    <div class="answer-card">
+                        <h4>Insured local service</h4>
+                        <p>We work across Metro Vancouver and understand local weather, moss, drainage, and exterior maintenance issues.</p>
+                    </div>
+                    <div class="answer-card">
+                        <h4>Fast communication</h4>
+                        <p>Most quote requests get a quick reply with service availability and next steps.</p>
+                    </div>
+                    <div class="answer-card">
+                        <h4>Pay after the job</h4>
+                        <p>You pay after the service is completed, not before.</p>
+                    </div>
+                </div>
+
+                <!-- Trust bar -->
+                <div class="trust-bar" aria-label="Trust signals">
+                    <div class="trust-pill"><span class="trust-dot"></span>Fully insured</div>
+                    <div class="trust-pill"><span class="trust-dot"></span>Photo proof on request</div>
+                    <div class="trust-pill"><span class="trust-dot"></span>No mess cleanup</div>
+                    <div class="trust-pill"><span class="trust-dot"></span>Pay after the job</div>
+                </div>
+
+                <div class="cta-row" style="margin-top: 28px;">
+                    <a class="btn-primary btn-quote-animated" href="#quote" data-page-link="quote">Get Free Quote (1 min)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="reveal">
+            <div class="container">
+                <h2>Services homeowners book most</h2>
+                <div class="services-grid">
+                    <a href="/services/gutter_cleaning" class="service-card" data-service="gutter">
+                        <h3>Gutter Cleaning</h3>
+                        <p>Full clean of gutters and downspouts to stop overflow, leaks, and water damage.</p>
+                    </a>
+                    <a href="/services/window_washing" class="service-card" data-service="window">
+                        <h3>Window Washing</h3>
+                        <p>Streak-free windows that make your home feel brighter inside and out.</p>
+                    </a>
+                    <a href="/services/pressure_washing" class="service-card" data-service="pressure">
+                        <h3>Pressure Washing</h3>
+                        <p>Driveways, decks, patios, siding and more, cleaned safely for each surface.</p>
+                    </a>
+                    <a href="/services/moss_removal" class="service-card" data-service="moss">
+                        <h3>Moss Removal</h3>
+                        <p>Gentle removal + treatment to help prevent regrowth and protect shingles.</p>
+                    </a>
+                    <a href="/services/junk_removal" class="service-card" data-service="junk">
+                        <h3>Junk Removal</h3>
+                        <p>Fast haul-away: yard waste, old furniture, renovation debris, branches.</p>
+                    </a>
+                    <a href="/services/handyman_services" class="service-card" data-service="handyman">
+                        <h3>Handyman Services</h3>
+                        <p>Small exterior fixes: loose downspouts, sealing, minor repairs and maintenance.</p>
+                    </a>
+                </div>
+
+                <!-- What's included - inside Services section -->
+                <div style="margin-top: 40px;">
+                    <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 20px; color: var(--primary);">What's included in every service</h3>
+                    <div class="include-list" aria-label="What's typically included">
+                        <div class="include-item">Clear scope of work before service</div>
+                        <div class="include-item">Safe equipment and careful exterior work</div>
+                        <div class="include-item">Cleanup after the job</div>
+                        <div class="include-item">Photo proof available on request</div>
+                        <div class="include-item">Flexible scheduling across Metro Vancouver</div>
+                        <div class="include-item">Payment after the job</div>
+                    </div>
+                </div>
+
+                <!-- AEO: Quick answers - moved inside Services -->
+                <div style="margin-top: 48px;">
+                    <h3 style="text-align: center; font-size: 1.3rem; margin-bottom: 20px; color: var(--primary);">Common questions about our services</h3>
+                    <div class="answer-grid" aria-label="Quick service answers">
+                        <div class="answer-card">
+                            <h4>What is included in a standard gutter cleaning visit?</h4>
+                            <p>A standard gutter cleaning visit usually includes debris removal from gutters, basic downspout flow check, cleanup of the work area, and photo proof on request. We confirm the scope before we start.</p>
+                        </div>
+                        <div class="answer-card">
+                            <h4>What areas do we serve?</h4>
+                            <p>We serve Vancouver, Burnaby, Surrey, Richmond, Coquitlam, Langley, Delta, New Westminster, North Vancouver, West Vancouver, Maple Ridge, Pitt Meadows, Port Coquitlam, Port Moody, White Rock, Tsawwassen and Ladner.</p>
+                        </div>
+                        <div class="answer-card">
+                            <h4>How much does gutter cleaning cost?</h4>
+                            <p>Single-story homes often start around $180–250. The final price depends on roof size, number of stories, access, debris level, and any add-on services.</p>
+                        </div>
+                        <div class="answer-card">
+                            <h4>Why do Metro Vancouver homes need regular exterior cleaning?</h4>
+                            <p>Frequent rain, tree debris, and moss growth can quickly lead to blocked gutters, slippery surfaces, stained siding, and roof wear. Routine cleaning helps protect the home and reduce repair risk.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-row" style="margin-top:44px;">
+                    <a class="btn-primary btn-quote-animated" href="#quote" data-page-link="quote">Get Free Quote (1 min)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="reveal">
+            <div class="container">
+                <h2>Quick answers before you book</h2>
+                <div class="faq-grid">
+                    <div class="faq-col" id="faqLeft">
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">How long does gutter cleaning take?</button>
+                            <div class="faq-answer"><p>Usually 1–4 hours depending on the home size, number of stories, and how clogged the gutters are. If you share a couple photos, we can estimate more accurately.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">Do I need to be home during the service?</button>
+                            <div class="faq-answer"><p>No. As long as we can access the work areas (for example, gates unlocked), you don't have to be home. We clean carefully and leave the area tidy.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">How often should gutters be cleaned here?</button>
+                            <div class="faq-answer"><p>Most homes need 1–2 times per year (spring and fall). If you have many trees nearby, twice a year is best to prevent overflows during heavy rain.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">Are you insured?</button>
+                            <div class="faq-answer"><p>Yes. We're fully insured. If you need confirmation for peace of mind, we can provide details when you request your quote.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">How much does gutter cleaning cost?</button>
+                            <div class="faq-answer"><p>Single-story homes often start around $180–250. Price depends on roof size, number of stories, access, and any add-ons. We confirm the total price before we begin.</p></div>
+                        </div>
+                    </div>
+                    <div class="faq-col" id="faqRight">
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">Do you work in rain or winter?</button>
+                            <div class="faq-answer"><p>We avoid heavy rain or snow for safety and to prevent mess. In winter, we usually work on dry days and above-freezing temperatures.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">Do you clean windows inside and outside?</button>
+                            <div class="faq-answer"><p>Yes. We can do exterior-only or both interior and exterior. We can also include sliding doors and sills if agreed in advance.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">Is roof moss removal safe for my roof?</button>
+                            <div class="faq-answer"><p>Yes. We use safe methods and avoid harsh approaches that damage shingles. When possible, we minimize roof foot traffic.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">Do you provide before/after photos?</button>
+                            <div class="faq-answer"><p>Yes, on request. Many homeowners love photo proof, especially for gutters and roof work, so you can clearly see the result.</p></div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" type="button">How do bookings and payments work?</button>
+                            <div class="faq-answer"><p>Request a quote or call us. We confirm the price and schedule. Payment is after the job (cash, e-Transfer, or card). No deposit required.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <p class="faq-footer">
+                    Still have a question?
+                    <a href="#quote" data-page-link="quote">Send a quick quote request</a> and we'll reply fast.
+                </p>
+                <div class="cta-row" style="margin-top:34px;">
+                    <a class="btn-primary btn-quote-animated" href="#quote" data-page-link="quote">Get Free Quote (1 min)</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Areas Section -->
+        <section id="areas" class="reveal" style="background:var(--bg-light);">
+            <div class="container">
+                <h2>Service Areas</h2>
+                <div class="service-areas-bar" id="areasTrigger">
+                    We serve all of Metro Vancouver ▸ Tap to see the full list
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quote Page -->
+    <section id="quotePage" aria-label="Quote Page">
+        <div class="container">
+            <div class="top-actions">
+                <a class="btn-back" href="#home" id="backToHome">← Back</a>
+            </div>
+
+            <div class="quote-mobile-actions" aria-label="Quick contact actions">
+                <a id="btnText" href="sms:+16725006060" aria-label="Text us at +1 (672) 500-6060">Text us</a>
+                <a id="btnEmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=cgc.services.bc@gmail.com" aria-label="Email us at cgc.services.bc@gmail.com">Email us</a>
+            </div>
+
+            <div class="quote-hero-title">Get a free quote in about 1 minute</div>
+            <div class="quote-hero-sub">
+                Tell us what you need and your city. We'll confirm price and availability fast.
+            </div>
+
+            <div class="quote-mini-proof" aria-label="Social proof">
+                <div class="proof-chip">★★★★★ <span>local homeowners</span></div>
+                <div class="proof-chip">Clear price <span>before we start</span></div>
+                <div class="proof-chip">No deposit <span>pay after job</span></div>
+            </div>
+
+            <div class="urgency-bar" id="urgencyBar">
+                Rainy-season reminder: clogged gutters can overflow fast
+                <small>Book early for the next available time slot</small>
+            </div>
+
+            <div class="form-card">
+                <form id="quoteForm" novalidate>
+                    <div class="form-group">
+                        <label class="field-label" for="name">Full Name *</label>
+                        <input id="name" name="name" type="text" autocomplete="name" required placeholder="Full name" aria-label="Full name">
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="field-label" for="phone">Phone *</label>
+                            <input
+                                    type="tel"
+                                    id="phone"
+                                    name="phone"
+                                    required
+                                    placeholder="Phone number"
+                                    aria-label="Phone number"
+                                    pattern="^[0-9+\s()-]{10,20}$"
+                                    title="Please enter at least 10 digits"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="field-label" for="email">Email</label>
+                            <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    autocomplete="email"
+                                    placeholder="Email"
+                                    aria-label="Email address"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="field-label" for="city">City *</label>
+                            <input
+                                    id="city"
+                                    name="city"
+                                    type="text"
+                                    autocomplete="address-level2"
+                                    required
+                                    placeholder="City (e.g., Vancouver)"
+                                    list="cityList"
+                                    aria-label="City"
+                            />
+                            <datalist id="cityList">
+                                <option value="Vancouver"></option>
+                                <option value="Surrey"></option>
+                                <option value="Burnaby"></option>
+                                <option value="Langley"></option>
+                                <option value="Coquitlam"></option>
+                                <option value="Richmond"></option>
+                                <option value="Delta"></option>
+                                <option value="North Vancouver"></option>
+                                <option value="New Westminster"></option>
+                                <option value="West Vancouver"></option>
+                                <option value="Maple Ridge"></option>
+                                <option value="Port Coquitlam"></option>
+                                <option value="Port Moody"></option>
+                                <option value="White Rock"></option>
+                                <option value="Pitt Meadows"></option>
+                                <option value="Tsawwassen"></option>
+                                <option value="Ladner"></option>
+                            </datalist>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="field-label" for="postal">Postal Code *</label>
+                            <input
+                                    id="postal"
+                                    name="postal"
+                                    type="text"
+                                    autocomplete="postal-code"
+                                    maxlength="7"
+                                    placeholder="Postal code "
+                                    style="text-transform:uppercase;"
+                                    autocapitalize="characters"
+                                    autocorrect="off"
+                                    spellcheck="false"
+                                    inputmode="text"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label" for="address">Street Address *</label>
+                        <input id="address" name="address" type="text" autocomplete="street-address" required placeholder="Street address" aria-label="Street address">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="field-label">Preferred Contact Method</label>
+                        <div class="contact-group" role="radiogroup" aria-label="Preferred Contact Method">
+                            <label><input type="radio" name="contact" value="Call" checked> Call</label>
+                            <label><input type="radio" name="contact" value="SMS"> SMS</label>
+                            <label><input type="radio" name="contact" value="Email"> Email</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group services-group">
+                        <label class="field-label">Select Services (at least one) *</label>
+                        <div class="checkbox-group" aria-label="Select Services">
+                            <label><input type="checkbox" name="service" value="Gutter Cleaning"><span>Gutter Cleaning</span></label>
+                            <label><input type="checkbox" name="service" value="Window Washing"><span>Window Washing</span></label>
+                            <label><input type="checkbox" name="service" value="Pressure Washing"><span>Pressure Washing (Driveway & Exterior)</span></label>
+                            <label><input type="checkbox" name="service" value="Moss Removal"><span>Moss Removal</span></label>
+                            <label><input type="checkbox" name="service" value="Junk Removal"><span>Junk Removal</span></label>
+                            <label><input type="checkbox" name="service" value="Handyman"><span>Handyman Services</span></label>
+                        </div>
+                        <div class="error" id="serviceError">Please select at least one service</div>
+                    </div>
+
+                    <!-- Photo Upload Section -->
+                    <div class="form-group photo-upload-group">
+                        <label class="field-label">Photos (optional)</label>
+                        <p class="field-hint">Upload photos of your gutters, roof, or areas that need service. This helps us provide a more accurate quote.</p>
+
+                        <div class="photo-upload-zone" id="photoUploadZone">
+                            <div class="upload-icon">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+                                </svg>
+                            </div>
+                            <p class="upload-text">Drag & drop photos here or <span class="upload-link">browse</span></p>
+                            <p class="upload-formats">JPG, PNG, WebP • Max 10MB each • Up to 10 photos</p>
+                            <input type="file" id="photoInput" name="photos" multiple accept="image/jpeg,image/png,image/webp,image/heic" style="display:none;">
+                        </div>
+
+                        <div class="photo-preview-grid" id="photoPreviewGrid"></div>
+                        <div class="upload-progress" id="uploadProgress" style="display:none;">
+                            <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+                            <span class="progress-text" id="progressText">Uploading...</span>
+                        </div>
+                        <input type="hidden" id="uploadedPhotos" name="uploaded_photos" value="">
+                    </div>
+
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label class="field-label" for="promo">Promo Code (optional)</label>
+                            <input id="promo" name="promo" type="text" autocomplete="off" placeholder="Promo code (optional)" aria-label="Promo code">
+                        </div>
+                        <div class="form-group">
+                            <label class="field-label" for="notes">Notes (optional)</label>
+                            <input id="notes" name="notes" type="text" autocomplete="off" placeholder="Any details (stories, access, timing)" aria-label="Notes">
+                        </div>
+                    </div>
+
+                    <div class="consent-box" id="consentBox">
+                        <div class="consent-title">Consents</div>
+
+                        <div class="consent-cards">
+                            <div class="consent-card">
+                                <label>
+                                    <input type="checkbox" id="consentTerms" name="consent_terms" required checked>
+                                    <span>I agree to the <a target="_blank" href="/docs/privacy">Privacy Policy</a> and consent to my data being used to process my request. <span class="req">(Required)</span></span>
+                                </label>
+                            </div>
+
+                            <div class="consent-card">
+                                <label>
+                                    <input type="checkbox" id="consentContactAll" name="consent_contact_all" checked>
+                                    <span>I agree to be contacted by Clean Gutters Crew by call, SMS or email about my request and occasional offers. Unsubscribe anytime.</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="consent-legal">
+                            View our <a target="_blank" href="/docs/privacy">Privacy Policy</a> and <a target="_blank" href="/docs/terms">Terms of Service</a>.
+                        </div>
+
+                        <div class="consent-error" id="consentError">
+                            Please accept the required Privacy Policy consent to submit the form.
+                        </div>
+                    </div>
+
+                    <div class="recaptcha-row" style="display:flex; justify-content:center; margin-top:14px;">
+                        <div class="g-recaptcha" data-sitekey="6LejNW4sAAAAAIwL5QG6mwIp5-og_20kjEBEnv3G"></div>
+                    </div>
+
+                    <div class="submit-row">
+                        <button type="submit" class="btn-primary submit-btn" id="submitBtn">
+                            Submit & Get Quote
+                        </button>
+                    </div>
+
+                    <div class="error" id="captchaError">Please confirm you are not a robot</div>
+
+                    <div class="micro-guarantee">
+                        We'll confirm the total price before we start. If it doesn't match what you expect, you can say no.
+                    </div>
+
+                    <div class="success-msg" id="successMsg"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block modals %}
+    <div class="modal" id="citiesModal" aria-hidden="true">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-label="Service Areas">
+            <div class="modal-header">
+                <h3>Metro Vancouver Communities We Serve</h3>
+                <button class="modal-close" type="button" aria-label="Close">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="cities-grid">
+                    <a class="city" href="/cities/vancouver">Vancouver</a>
+                    <a class="city" href="/cities/burnaby">Burnaby</a>
+                    <a class="city" href="/cities/surrey">Surrey</a>
+                    <a class="city" href="/cities/richmond">Richmond</a>
+                    <a class="city" href="/cities/coquitlam">Coquitlam</a>
+                    <a class="city" href="/cities/langley">Langley</a>
+                    <a class="city" href="/cities/delta">Delta</a>
+                    <a class="city" href="/cities/new_westminster">New Westminster</a>
+                    <a class="city" href="/cities/north_vancouver">North Vancouver</a>
+                    <a class="city" href="/cities/west_vancouver">West Vancouver</a>
+                    <a class="city" href="/cities/maple_ridge">Maple Ridge</a>
+                    <a class="city" href="/cities/pitt_meadows">Pitt Meadows</a>
+                    <a class="city" href="/cities/port_coquitlam">Port Coquitlam</a>
+                    <a class="city" href="/cities/port_moody">Port Moody</a>
+                    <a class="city" href="/cities/white_rock">White Rock</a>
+                    <a class="city" href="/cities/tsawwassen">Tsawwassen</a>
+                    <a class="city" href="/cities/ladner">Ladner</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

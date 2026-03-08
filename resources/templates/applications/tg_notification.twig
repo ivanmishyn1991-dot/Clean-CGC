@@ -1,0 +1,9 @@
+New notification
+
+Name: {{ application.name }}
+Phone: {{ application.phone }}
+Email: {{ application.email }}
+City: {{ application.city }}
+{{ application.message|replace({
+    '<br>': "\n", '<br/>': "\n", '<br />': "\n"
+}) }}

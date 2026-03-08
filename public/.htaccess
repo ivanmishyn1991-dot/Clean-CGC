@@ -1,0 +1,17 @@
+DirectoryIndex index.php
+
+RewriteEngine on
+RewriteBase /
+
+# Нормализация URL - убираем public из адреса
+RewriteCond %{THE_REQUEST} /public/([^\s?]+)
+RewriteRule ^ /%1 [R=301,L,QSA]
+
+# Перенаправляем все запросы в папку public, кроме тех, что уже в public
+RewriteCond %{REQUEST_URI} !^/public/
+RewriteRule (.*) /public/$1 [L]
+
+# Если файл не найден в public - отдаем index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ /public/index.php [QSA,L]

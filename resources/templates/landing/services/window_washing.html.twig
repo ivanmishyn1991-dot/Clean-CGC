@@ -1,0 +1,180 @@
+{% extends "page.html.twig" %}
+
+{% block title %}Window Washing in Metro Vancouver BC | Clean Gutters Crew{% endblock %}
+
+{% block content %}
+    <section class="window-section">
+
+        <h1>2. Window Washing</h1>
+
+        <img style="width: 100%" src="/assets/images/services/Windows.png">
+
+        <h2>It Is More Than Just “For Looks”</h2>
+
+        <p>
+            Dirty windows can block up to 30–40% of natural light. That means:
+        </p>
+
+        <ul>
+            <li>Higher electricity bills</li>
+            <li>More artificial lighting</li>
+            <li>Reduced mood and comfort</li>
+            <li>A constant “dirty home” feeling</li>
+        </ul>
+
+        <p>
+            In BC’s rainy environment, pollen, salt residue, and grime build up quickly.
+        </p>
+
+        <h2>Dangers of Ignoring It</h2>
+
+        <p>Contaminants on glass include:</p>
+
+        <ul>
+            <li>Dust</li>
+            <li>Pollen</li>
+            <li>Acidic residues</li>
+            <li>Bird droppings</li>
+        </ul>
+
+        <p>Over time this:</p>
+
+        <ul>
+            <li>Scratches glass</li>
+            <li>Damages seals</li>
+            <li>Causes corrosion</li>
+            <li>Contributes to mold growth</li>
+        </ul>
+
+        <h2>Benefits of Regular Cleaning</h2>
+
+        <ul>
+            <li>More natural light</li>
+            <li>Improved indoor air quality</li>
+            <li>Protection of window seals</li>
+            <li>Extended window lifespan</li>
+            <li>Higher property value</li>
+        </ul>
+
+        <h2>Psychological Effect</h2>
+
+        <p>Natural light reduces stress.</p>
+        <p>Bright interiors improve mood and sleep.</p>
+        <p>Clean windows create a sense of order and control.</p>
+
+        <h2>Table</h2>
+
+        <div class="table-wrapper">
+            <table class="service-table">
+                <thead>
+                <tr>
+                    <th>If Ignored</th>
+                    <th>What Happens</th>
+                    <th>Regular Cleaning Provides</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Dirt buildup</td>
+                    <td>Light blockage</td>
+                    <td>Up to 40% more light</td>
+                </tr>
+                <tr>
+                    <td>Dust &amp; pollen</td>
+                    <td>Allergens inside</td>
+                    <td>Healthier air</td>
+                </tr>
+                <tr>
+                    <td>Bird droppings</td>
+                    <td>Glass damage</td>
+                    <td>Surface protection</td>
+                </tr>
+                <tr>
+                    <td>Moisture on frames</td>
+                    <td>Mold growth</td>
+                    <td>Seal integrity protection</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .window-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+            line-height: 1.7;
+            font-family: Inter, sans-serif;
+        }
+
+        .window-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .window-section h2 {
+            font-size: 20px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .window-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .window-section li {
+            margin-bottom: 8px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .service-table thead {
+            background: #f4f6f8;
+        }
+
+        .service-table th,
+        .service-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .service-table th {
+            font-weight: 600;
+        }
+
+        .service-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .window-section {
+                padding: 25px 15px;
+            }
+
+            .window-section h1 {
+                font-size: 22px;
+            }
+
+            .window-section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+{% endblock %}
+

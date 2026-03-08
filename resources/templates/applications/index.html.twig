@@ -1,0 +1,79 @@
+{% extends "dashboard.html.twig" %}
+
+{% block title %}Applications list{% endblock %}
+
+{% block content %}
+    <div class="row tm-content-row tm-mt-big">
+        <div class="col-xl-12 col-lg-12 tm-md-12 tm-sm-12 tm-col">
+            <div class="bg-white tm-block h-100">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <h2 class="tm-block-title d-inline-block">Applications</h2>
+                    </div>
+
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover table-striped tm-table-striped-even mt-3">
+                        <thead>
+                        <tr class="tm-bg-gray">
+                            <th scope="col">&nbsp;</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Phone</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">City</th>
+                            <th scope="col">Message</th>
+                            <th scope="col">Created</th>
+                            <th scope="col"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for application in page.data %}
+                            <tr id="row-{{ application.id }}">
+                                <th scope="row"><input type="checkbox" aria-label="Checkbox"></th>
+                                <td><a href="/admin/applications/{{ application.id }}/">{{ application.name }}</a></td>
+                                <td>{{ application.phone }}</td>
+                                <td>{{ application.email }}</td>
+                                <td>{{ application.city }}</td>
+                                <td>{{ application.message | raw }}</td>
+                                <td>{{ application.createdAt|date('d.m.Y H:i') }}</td>
+                                <td onclick="deleteApplication({{ application.id }})"><i class="fas fa-trash-alt tm-trash-icon"></i></td>
+                            </tr>
+                        {% endfor %}
+
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="tm-table-mt tm-table-actions-row">
+                    <div class="tm-table-actions-col-left">
+                        <button class="btn btn-danger">Delete Selected Items</button>
+                    </div>
+                    <div class="tm-table-actions-col-right">
+                        {% include 'components/pagination.html.twig'
+                            with {'paginator': page.paginator, 'url': '/admin/applications/?page='} %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    function deleteApplication(id)
+    {
+        $.ajax({
+            type: 'DELETE',
+            url: '/admin/applications/'+id,
+            dataType: 'json',
+            cache: false,
+            success: function (responce) {
+                if (responce.success === true) {
+                    $('#row-'+id).remove();
+                }
+            }
+        });
+    }
+</script>
+{% endblock %}

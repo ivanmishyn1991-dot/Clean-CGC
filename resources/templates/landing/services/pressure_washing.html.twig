@@ -1,0 +1,176 @@
+{% extends "page.html.twig" %}
+
+{% block title %}Pressure Washing in Metro Vancouver BC | Clean Gutters Crew{% endblock %}
+
+{% block content %}
+    <section class="pressure-section">
+
+        <h1>3. Pressure Washing</h1>
+
+        <img style="width: 100%" src="/assets/images/services/Pressure.png">
+
+        <h2>Exterior Surfaces Also Deteriorate</h2>
+
+        <p>Your siding, walkways, stairs, and walls absorb:</p>
+
+        <ul>
+            <li>Dirt</li>
+            <li>Moss</li>
+            <li>Algae</li>
+            <li>Organic buildup</li>
+            <li>Grease and grime</li>
+        </ul>
+
+        <p>
+            In wet climates, moisture retention accelerates material breakdown.
+        </p>
+
+        <h2>What Happens If You Ignore It</h2>
+
+        <ul>
+            <li>Slippery steps → fall risk</li>
+            <li>Concrete erosion</li>
+            <li>Wood rot</li>
+            <li>Faded surfaces</li>
+            <li>Decreased home value</li>
+        </ul>
+
+        <p>
+            Dirt traps moisture — moisture destroys materials.
+        </p>
+
+        <h2>Financial Advantage</h2>
+
+        <p>Routine pressure washing:</p>
+
+        <ul>
+            <li>Extends surface lifespan</li>
+            <li>Reduces repainting frequency</li>
+            <li>Prevents costly structural repairs</li>
+        </ul>
+
+        <h2>Psychological Benefit</h2>
+
+        <p>A clean exterior:</p>
+
+        <ul>
+            <li>Builds pride of ownership</li>
+            <li>Creates a sense of safety</li>
+            <li>Improves first impressions</li>
+        </ul>
+
+        <h2>Table</h2>
+
+        <div class="table-wrapper">
+            <table class="service-table">
+                <thead>
+                <tr>
+                    <th>If Ignored</th>
+                    <th>What Happens</th>
+                    <th>Regular Washing Provides</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Dirt buildup</td>
+                    <td>Surface deterioration</td>
+                    <td>Extended lifespan</td>
+                </tr>
+                <tr>
+                    <td>Moss on stairs</td>
+                    <td>Slip hazard</td>
+                    <td>Safer walkways</td>
+                </tr>
+                <tr>
+                    <td>Moisture retention</td>
+                    <td>Cracks &amp; damage</td>
+                    <td>Structural protection</td>
+                </tr>
+                <tr>
+                    <td>Faded siding</td>
+                    <td>Lower curb appeal</td>
+                    <td>Increased property value</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </section>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .pressure-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: #ffffff;
+            line-height: 1.7;
+            font-family: Inter, sans-serif;
+        }
+
+        .pressure-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .pressure-section h2 {
+            font-size: 20px;
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .pressure-section ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .pressure-section li {
+            margin-bottom: 8px;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        .service-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        .service-table thead {
+            background: #f4f6f8;
+        }
+
+        .service-table th,
+        .service-table td {
+            padding: 14px 16px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .service-table th {
+            font-weight: 600;
+        }
+
+        .service-table tbody tr:hover {
+            background: #fafafa;
+        }
+
+        @media (max-width: 768px) {
+            .pressure-section {
+                padding: 25px 15px;
+            }
+
+            .pressure-section h1 {
+                font-size: 22px;
+            }
+
+            .pressure-section h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+{% endblock %}
