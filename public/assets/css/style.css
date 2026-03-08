@@ -70,6 +70,9 @@ header {
     background: white;
     box-shadow: 0 6px 20px rgba(2,132,199,0.12);
     backdrop-filter: blur(10px);
+    /* Prevent layout shifts on iOS Safari */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 }
 
 .header-inner {
@@ -1249,8 +1252,7 @@ body.quote-mode #quotePage .btn-sms:hover{
         box-shadow: 0 10px 24px rgba(2,132,199,0.24) !important;
         padding: 12px 18px !important;
         font-size: 1rem !important;
-        animation: mobileGlowWiggle 8s ease-in-out infinite !important;
-        will-change: transform, box-shadow, filter;
+        /* REMOVED animation to prevent layout shifts on mobile */
     }
     header .btn-call:hover{
         background: linear-gradient(90deg, var(--primary-d), var(--primary)) !important;
@@ -1286,8 +1288,7 @@ body.quote-mode #quotePage .btn-sms:hover{
         font-weight: 900;
         padding: 12px 14px;
         box-shadow: 0 10px 24px rgba(2,132,199,0.24);
-        animation: mobileGlowWiggle 8s ease-in-out infinite;
-        will-change: transform, box-shadow, filter;
+        /* REMOVED animation to prevent layout shifts */
         white-space: nowrap;
     }
     #quotePage .quote-mobile-actions a:hover{
