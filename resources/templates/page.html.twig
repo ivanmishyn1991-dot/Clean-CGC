@@ -33,7 +33,9 @@
 
 
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <!-- Schema.org для локального бизнеса -->
+    
+    {% block schema %}
+    <!-- Default Schema.org (overridden in service pages) -->
     <script type="application/ld+json">
         {
             "@context": "https://schema.org",
@@ -47,11 +49,11 @@
                 "addressCountry": "CA"
             },
             "areaServed": "Metro Vancouver",
-
             "priceRange": "$$",
             "openingHours": "Mo-Su 07:00-20:00"
         }
     </script>
+    {% endblock %}
 
 
     <link rel="stylesheet" type="text/css" href="/assets/css/page-city.css">
