@@ -300,7 +300,28 @@ $('#quoteForm')?.addEventListener('submit', (e) => {
 
     const success = $('#successMsg');
     if (success){
-        const form = $('#quoteForm').reset();
+        // Reset form
+        $('#quoteForm').reset();
+        
+        // Clear uploaded photos using global function
+        if (typeof window.clearUploadedPhotos === 'function') {
+            window.clearUploadedPhotos();
+        }
+        
+        // Clear simple photo selector too
+        if (photosPreview) {
+            photosPreview.innerHTML = '';
+        }
+        if (photosInput) {
+            photosInput.value = '';
+        }
+        setPhotosStatus('');
+        
+        // Reset reCAPTCHA
+        if (window.grecaptcha && typeof window.grecaptcha.reset === 'function') {
+            window.grecaptcha.reset();
+        }
+        
         success.style.display = 'block';
         success.textContent = 'Thanks! We received your request and will reply shortly.';
     }
@@ -453,6 +474,14 @@ if (photosInput){
 /* ========================================
    PHOTO UPLOAD FUNCTIONALITY
 ======================================== */
+// Global function to clear uploaded photos (called after form submit)
+window.clearUploadedPhotos = function() {
+    const previewGrid = document.getElementById('photoPreviewGrid');
+    const uploadedPhotosInput = document.getElementById('uploadedPhotos');
+    if (previewGrid) previewGrid.innerHTML = '';
+    if (uploadedPhotosInput) uploadedPhotosInput.value = '';
+};
+
 (function() {
     'use strict';
 
@@ -471,6 +500,13 @@ if (photosInput){
     const MAX_FILES = 10;
     const MAX_SIZE = 10 * 1024 * 1024; // 10MB
     const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
+    
+    // Update global clear function to also clear local array
+    const originalClear = window.clearUploadedPhotos;
+    window.clearUploadedPhotos = function() {
+        originalClear();
+        uploadedFiles = [];
+    };
 
     // Клик по зоне загрузки
     uploadZone.addEventListener('click', () => photoInput.click());

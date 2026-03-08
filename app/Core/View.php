@@ -15,6 +15,9 @@ class View
     {
         $loader = new FilesystemLoader(__DIR__.'/../../resources/templates');
         $this->twig = new Twig($loader, []);
+        
+        // Register custom extensions
+        $this->twig->addExtension(new TwigExtensions());
     }
 
     public function assign(string $key, $value) : View
