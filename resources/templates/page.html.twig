@@ -217,6 +217,93 @@
     </div>
 </div>
 
+<!-- Sticky Bottom Bar (Mobile Only - Services/Cities pages) -->
+<div class="sticky-bottom-bar" id="stickyBottomBar">
+    <button class="sticky-btn-main" id="stickyMenuBtn" type="button" aria-label="Open services menu">
+        <span>Our Services</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+</div>
+
+<!-- Sticky Menu Overlay -->
+<div class="sticky-menu-overlay" id="stickyMenuOverlay"></div>
+
+<!-- Sticky Slide-up Menu -->
+<div class="sticky-menu" id="stickyMenu">
+    <div class="sticky-menu-handle"></div>
+    
+    <div class="sticky-menu-grid">
+        <!-- Call me back -->
+        <button class="sticky-menu-item highlight" id="stickyCallMeBack" type="button">
+            <div class="sticky-menu-icon">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="sticky-menu-text">
+                Call me back
+                <span>We'll call you in 15 min</span>
+            </div>
+        </button>
+        
+        <div class="sticky-menu-divider"></div>
+        
+        <!-- Services with prices -->
+        <a class="sticky-menu-item" href="/services/gutter_cleaning">
+            <div class="sticky-menu-icon">
+                <i class="fa-solid fa-house-chimney"></i>
+            </div>
+            <div class="sticky-menu-text">
+                Gutter Cleaning
+                <span class="sticky-price">from $150</span>
+            </div>
+        </a>
+        
+        <a class="sticky-menu-item" href="/services/window_washing">
+            <div class="sticky-menu-icon">
+                <i class="fa-solid fa-window-maximize"></i>
+            </div>
+            <div class="sticky-menu-text">
+                Window Washing
+                <span class="sticky-price">from $150</span>
+            </div>
+        </a>
+        
+        <a class="sticky-menu-item" href="/services/pressure_washing">
+            <div class="sticky-menu-icon">
+                <i class="fa-solid fa-spray-can-sparkles"></i>
+            </div>
+            <div class="sticky-menu-text">
+                Pressure Washing
+                <span class="sticky-price">from $200</span>
+            </div>
+        </a>
+        
+        <a class="sticky-menu-item" href="/services/moss_removal">
+            <div class="sticky-menu-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <div class="sticky-menu-text">
+                Moss Removal
+                <span class="sticky-price">from $400</span>
+            </div>
+        </a>
+        
+        <div class="sticky-menu-divider"></div>
+        
+        <!-- Get Quote - Orange button -->
+        <a class="sticky-menu-item sticky-quote-btn" href="/#quote">
+            <div class="sticky-menu-icon">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div class="sticky-menu-text">
+                Get Your Price
+                <span>Free estimate</span>
+            </div>
+        </a>
+    </div>
+</div>
+
 <script src="/assets/js/page-city.js?rand={{ random() }}"></script>
 
 

@@ -405,3 +405,102 @@ window.addEventListener('load', () => {
         }
     }, { passive: true });
 })();
+
+/* ===== Sticky Bottom Bar (Mobile - Services/Cities pages) ===== */
+(function(){
+    const stickyBar = document.getElementById('stickyBottomBar');
+    const stickyMenuBtn = document.getElementById('stickyMenuBtn');
+    const stickyMenu = document.getElementById('stickyMenu');
+    const stickyOverlay = document.getElementById('stickyMenuOverlay');
+    const stickyCallMeBack = document.getElementById('stickyCallMeBack');
+    
+    if (!stickyBar || !stickyMenuBtn || !stickyMenu) return;
+    
+    // Add class to body for padding
+    document.body.classList.add('has-sticky-bar');
+    
+    // Open/close menu
+    function openMenu() {
+        stickyMenu.classList.add('open');
+        stickyOverlay.classList.add('open');
+        stickyMenuBtn.classList.add('open');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMenu() {
+        stickyMenu.classList.remove('open');
+        stickyOverlay.classList.remove('open');
+        stickyMenuBtn.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+    
+    stickyMenuBtn.addEventListener('click', () => {
+        if (stickyMenu.classList.contains('open')) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+    
+    stickyOverlay.addEventListener('click', closeMenu);
+    
+    // Call me back - открывает Quick Quote модал
+    if (stickyCallMeBack) {
+        stickyCallMeBack.addEventListener('click', () => {
+            closeMenu();
+            // Открываем Quick Quote модал
+            const quickQuoteOverlay = document.getElementById('quickQuoteOverlay');
+            const quickQuoteModal = document.getElementById('quickQuoteModal');
+            if (quickQuoteOverlay && quickQuoteModal) {
+                quickQuoteOverlay.classList.add('open');
+                quickQuoteModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+    }
+    
+    // Close menu when clicking on links
+    stickyMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeMenu();
+        });
+    });
+    
+    // Hide bar when footer is visible
+    const footer = document.querySelector('footer');
+    if (footer) {
+        const footerObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    stickyBar.classList.add('hidden');
+                } else {
+                    stickyBar.classList.remove('hidden');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        footerObserver.observe(footer);
+    }
+    
+    // Keyboard support
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && stickyMenu.classList.contains('open')) {
+            closeMenu();
+        }
+    });
+    
+    // Swipe down to close
+    let touchStartY = 0;
+    stickyMenu.addEventListener('touchstart', (e) => {
+        touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+    
+    stickyMenu.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].screenY;
+        const diff = touchEndY - touchStartY;
+        
+        if (diff > 80) {
+            closeMenu();
+        }
+    }, { passive: true });
+})();
