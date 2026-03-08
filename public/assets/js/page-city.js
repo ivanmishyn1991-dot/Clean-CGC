@@ -263,3 +263,145 @@ window.addEventListener('load', () => {
         observer.observe(el);
     });
 })();
+
+/* ===== Photo Lightbox ===== */
+(function(){
+    const lightbox = document.getElementById('photoLightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxCaption = document.getElementById('lightboxCaption');
+    const closeBtn = lightbox?.querySelector('.photo-lightbox-close');
+    const prevBtn = lightbox?.querySelector('.photo-lightbox-prev');
+    const nextBtn = lightbox?.querySelector('.photo-lightbox-next');
+    
+    if (!lightbox || !lightboxImg) return;
+    
+    // Collect all work photos
+    let photos = [];
+    let currentIndex = 0;
+    
+    function collectPhotos() {
+        photos = [];
+        document.querySelectorAll('.work-photo').forEach((img, idx) => {
+            photos.push({
+                src: img.src,
+                alt: img.alt || 'Work photo ' + (idx + 1)
+            });
+        });
+    }
+    
+    function openLightbox(index) {
+        if (photos.length === 0) return;
+        
+        currentIndex = index;
+        updateLightboxImage();
+        
+        lightbox.classList.add('open');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        
+        // Update nav visibility
+        updateNavVisibility();
+    }
+    
+    function closeLightbox() {
+        lightbox.classList.remove('open');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+    
+    function updateLightboxImage() {
+        if (photos[currentIndex]) {
+            lightboxImg.src = photos[currentIndex].src;
+            lightboxImg.alt = photos[currentIndex].alt;
+            lightboxCaption.textContent = photos[currentIndex].alt;
+        }
+    }
+    
+    function updateNavVisibility() {
+        if (photos.length <= 1) {
+            prevBtn.style.display = 'none';
+            nextBtn.style.display = 'none';
+        } else {
+            prevBtn.style.display = 'flex';
+            nextBtn.style.display = 'flex';
+        }
+    }
+    
+    function showPrev() {
+        currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+        updateLightboxImage();
+    }
+    
+    function showNext() {
+        currentIndex = (currentIndex + 1) % photos.length;
+        updateLightboxImage();
+    }
+    
+    // Event listeners for work-open buttons
+    document.querySelectorAll('.work-open').forEach((btn, idx) => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            collectPhotos();
+            openLightbox(idx);
+        });
+    });
+    
+    // Close button
+    closeBtn?.addEventListener('click', closeLightbox);
+    
+    // Click outside to close
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Navigation
+    prevBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPrev();
+    });
+    
+    nextBtn?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNext();
+    });
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('open')) return;
+        
+        switch(e.key) {
+            case 'Escape':
+                closeLightbox();
+                break;
+            case 'ArrowLeft':
+                showPrev();
+                break;
+            case 'ArrowRight':
+                showNext();
+                break;
+        }
+    });
+    
+    // Swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    lightbox.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+                showNext();
+            } else {
+                showPrev();
+            }
+        }
+    }, { passive: true });
+})();
