@@ -219,6 +219,7 @@ $('#backToHome')?.addEventListener('click', (e) => {
 
 window.addEventListener('hashchange', applyPageMode);
 
+// Handle links like #services
 $$('a[href^="#"]').forEach(a => {
     a.addEventListener('click', (e) => {
         const href = a.getAttribute('href');
@@ -244,6 +245,39 @@ $$('a[href^="#"]').forEach(a => {
         }
 
         history.replaceState(null, '', href);
+        doScroll();
+    });
+});
+
+// Handle links like /#services (with leading slash)
+$$('a[href^="/#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        
+        // Extract the hash part (remove leading /)
+        const hashPart = href.substring(1); // /#services -> #services
+        if (hashPart === '#quote' || hashPart === '#home') return;
+
+        const target = document.querySelector(hashPart);
+        if (!target) return;
+
+        e.preventDefault();
+
+        const doScroll = () => {
+            const headerH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--headerH')) || 120;
+            const topPos = target.getBoundingClientRect().top + window.pageYOffset - headerH;
+            window.scrollTo({ top: topPos, behavior: 'smooth' });
+        };
+
+        if (document.body.classList.contains('quote-mode')) {
+            location.hash = hashPart;
+            applyPageMode();
+            requestAnimationFrame(() => requestAnimationFrame(doScroll));
+            return;
+        }
+
+        history.replaceState(null, '', hashPart);
         doScroll();
     });
 });
