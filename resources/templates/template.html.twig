@@ -375,17 +375,21 @@
         @media (max-width: 768px) {
             .aeo-hero .hero-points {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: 1fr 1fr;
                 gap: 10px;
                 border-radius: 24px;
                 padding: 16px;
             }
             .aeo-hero .hero-point {
+                display: flex;
                 justify-content: center;
-                white-space: normal;
+                align-items: center;
+                white-space: nowrap;
                 text-align: center;
-                font-size: 0.9rem;
-                padding: 12px 10px;
+                font-size: 0.85rem;
+                padding: 10px 8px;
+                width: 100%;
+                box-sizing: border-box;
             }
         }
         
