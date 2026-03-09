@@ -406,33 +406,24 @@ h2 {
 
 @keyframes quoteGlowShake {
     0%, 78% {
-        transform: translateY(0) scale(1);
         box-shadow:
                 0 14px 34px rgba(2,132,199,0.30),
                 0 0 0 rgba(56,189,248,0);
         filter: brightness(1);
     }
     40% {
-        transform: translateY(-2px) scale(1.02);
         box-shadow:
-                0 18px 44px rgba(2,132,199,0.34),
+                0 18px 44px rgba(2,132,199,0.40),
                 0 0 22px rgba(56,189,248,0.55);
-        filter: brightness(1.02);
+        filter: brightness(1.06);
     }
     80% {
-        transform: translateY(0) scale(1.02);
         box-shadow:
-                0 18px 44px rgba(2,132,199,0.34),
-                0 0 26px rgba(56,189,248,0.65);
+                0 20px 48px rgba(2,132,199,0.45),
+                0 0 28px rgba(56,189,248,0.65);
+        filter: brightness(1.08);
     }
-    82% { transform: translateX(-2px) translateY(0) scale(1.02); }
-    84% { transform: translateX( 2px) translateY(0) scale(1.02); }
-    86% { transform: translateX(-3px) translateY(0) scale(1.02); }
-    88% { transform: translateX( 3px) translateY(0) scale(1.02); }
-    90% { transform: translateX(-2px) translateY(0) scale(1.02); }
-    92% { transform: translateX( 2px) translateY(0) scale(1.02); }
     100% {
-        transform: translateX(0) translateY(0) scale(1);
         box-shadow:
                 0 14px 34px rgba(2,132,199,0.30),
                 0 0 18px rgba(56,189,248,0.35);
@@ -1186,15 +1177,10 @@ body.quote-mode #quotePage .btn-sms:hover{
 }
 
 @keyframes btnBounceWiggle {
-    0%   { transform: translateY(0) scale(1); }
-    18%  { transform: translateY(-6px) scale(1.02); }
-    30%  { transform: translateY(0) scale(1.02); }
-    38%  { transform: translateX(-2px) translateY(0) scale(1.02); }
-    46%  { transform: translateX( 2px) translateY(0) scale(1.02); }
-    54%  { transform: translateX(-3px) translateY(0) scale(1.02); }
-    62%  { transform: translateX( 3px) translateY(0) scale(1.02); }
-    70%  { transform: translateX(0) translateY(0) scale(1.01); }
-    100% { transform: translateY(0) scale(1); }
+    0%   { box-shadow: 0 14px 34px rgba(2,132,199,0.30); filter: brightness(1); }
+    30%  { box-shadow: 0 18px 44px rgba(2,132,199,0.40), 0 0 22px rgba(56,189,248,0.55); filter: brightness(1.06); }
+    60%  { box-shadow: 0 20px 48px rgba(2,132,199,0.45), 0 0 28px rgba(56,189,248,0.65); filter: brightness(1.08); }
+    100% { box-shadow: 0 14px 34px rgba(2,132,199,0.30); filter: brightness(1); }
 }
 .wiggle{
     animation: btnBounceWiggle 0.9s ease-in-out;
