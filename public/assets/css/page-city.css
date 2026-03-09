@@ -1265,6 +1265,14 @@ footer a:hover{ color: white; }
 @media (max-width: 768px) {
     .sticky-bottom-bar {
         display: block;
+        opacity: 0;
+        transform: translateY(100%);
+        pointer-events: none;
+    }
+    .sticky-bottom-bar.visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
     }
     body.has-sticky-bar {
         padding-bottom: 80px;

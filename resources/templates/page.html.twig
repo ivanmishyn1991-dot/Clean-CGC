@@ -492,5 +492,45 @@ window.addEventListener('load', function() {
 })();
 </script>
 
+<!-- Sticky bottom bar scroll behavior -->
+<script>
+(function() {
+    const stickyBar = document.getElementById('stickyBottomBar');
+    if (!stickyBar) return;
+    
+    let lastScrollY = window.scrollY;
+    let hasScrolledOnce = false;
+    let ticking = false;
+    
+    function updateStickyBar() {
+        const currentScrollY = window.scrollY;
+        
+        // Only start showing after first scroll
+        if (!hasScrolledOnce && currentScrollY > 100) {
+            hasScrolledOnce = true;
+        }
+        
+        if (hasScrolledOnce) {
+            // Show when scrolling UP, hide when scrolling DOWN
+            if (currentScrollY < lastScrollY) {
+                stickyBar.classList.add('visible');
+            } else if (currentScrollY > lastScrollY) {
+                stickyBar.classList.remove('visible');
+            }
+        }
+        
+        lastScrollY = currentScrollY;
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', function() {
+        if (!ticking) {
+            requestAnimationFrame(updateStickyBar);
+            ticking = true;
+        }
+    }, { passive: true });
+})();
+</script>
+
 </body>
 </html>
