@@ -613,6 +613,14 @@
         // NO automatic fallback - only load when user needs it
     })();
     </script>
+
+    <!-- Always scroll to top on page load -->
+    <script>
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+    </script>
 {% endblock %}
 
 </body>
