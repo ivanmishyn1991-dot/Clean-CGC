@@ -947,8 +947,6 @@ document.addEventListener('DOMContentLoaded', function() {
             if (response.ok) {
                 form.style.display = 'none';
                 successBlock.style.display = 'block';
-                
-                Toast.success('We will call you back shortly!');
 
                 setTimeout(() => {
                     closeModalFn();
@@ -964,7 +962,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 throw new Error('Server error');
             }
         } catch (error) {
-            Toast.error('Error sending request. Please try again.');
+            console.error('Error sending callback request:', error);
             submitBtn.disabled = false;
             submitBtn.querySelector('.btn-quick-text').textContent = 'Send';
         }
