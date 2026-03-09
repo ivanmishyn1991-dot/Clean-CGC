@@ -14,6 +14,11 @@ class MainController extends Controller
         $this->view->display('quote.html.twig');
     }
 
+    public function faqPage() : void
+    {
+        $this->view->display('faq.html.twig');
+    }
+
     public function page($route) : bool
     {
         $file = current(explode('?', $route->splat, 2));

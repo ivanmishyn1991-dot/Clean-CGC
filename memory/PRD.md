@@ -49,7 +49,15 @@ Enhance and polish an existing cleaning service website built with PHP and Twig.
 - ✅ Updated navigation header link to `/quote`
 - ✅ Updated Price modal links to `/quote`
 - ✅ Removed embedded quote form from main page
-- **Result:** Main page template reduced from 475 lines to 246 lines (~48% reduction)
+
+### FAQ Separation (Dec 9, 2025 - Current Session)
+- ✅ Created separate `/faq` page (`resources/templates/faq.html.twig`)
+- ✅ Added route `/faq` in `public/index.php`
+- ✅ Added `faqPage()` method in `MainController.php`
+- ✅ Updated navigation header link to `/faq`
+- ✅ Replaced FAQ section on main page with big blue button (same style as Areas)
+- ✅ FAQ accordion functionality works on dedicated page
+- **Result:** Main page template reduced from 475 lines to 180 lines (~62% reduction)
 - **Expected impact:** Smaller DOM, faster initial load, better PageSpeed score
 
 ### Buttons Fix Verification (Dec 9, 2025)
@@ -87,7 +95,9 @@ The user needs to run a new Google PageSpeed Insights test to verify:
 4. All functionality works (forms, modals, Telegram notifications)
 
 ## API Endpoints
-- `GET /quote` - Quote form page (NEW)
+- `GET /` - Main homepage
+- `GET /quote` - Quote form page
+- `GET /faq` - FAQ page
 - `POST /quick-quote` - Quick quote form submission
 - `POST /applications` - Full application submission
 - `POST /upload/photos` - Photo upload
@@ -111,7 +121,7 @@ TG_CHANNEL=[telegram_channel_id]
 ## Pending Tasks
 
 ### P0 - Critical
-- [ ] User to verify PageSpeed scores (mobile & desktop) after quote separation
+- [ ] User to verify PageSpeed scores (mobile & desktop) after quote + FAQ separation
 - [ ] User to confirm all functionality works on production
 
 ### P1 - Important
@@ -119,13 +129,14 @@ TG_CHANNEL=[telegram_channel_id]
 - [ ] Optimize images (logo.webp, social-robot.webp) to actual display sizes
 
 ### P2 - Future/Backlog
-- [ ] Move FAQ section to separate `/faq` page (further DOM reduction)
 - [ ] Add `font-display: swap` to FontAwesome CSS import
 - [ ] Clean up JavaScript code (remove unused quote-mode logic)
 
 ## Known Working Features
 - ✅ Main homepage with all sections
 - ✅ Quote form on separate `/quote` page
+- ✅ FAQ on separate `/faq` page with accordion functionality
+- ✅ FAQ button on main page (big blue, links to /faq)
 - ✅ "Call me back" button and modal
 - ✅ "Price" button and modal
 - ✅ Navigation between pages
