@@ -1,151 +1,74 @@
-# Clean Gutters Crew - Cleaning Services Website
+# PRD: Cleaning Service Landing Page
 
 ## Original Problem Statement
-Enhance and polish an existing cleaning service website built with PHP and Twig. Primary goals:
-1. Achieve Google PageSpeed score of 80+ for both mobile and desktop
-2. Eliminate font loading "jumps" (FOUT) that cause Cumulative Layout Shift (CLS)
-3. Keep repository clean of unnecessary files
-4. Improve site structure for better performance
+Enhance and polish an existing cleaning service website built with PHP and Twig with focus on performance optimization (PageSpeed 80+), eliminating layout shifts, and UI polishing.
 
-## Tech Stack
-- **Backend:** PHP 8.x with FlightPHP framework
-- **Templating:** Twig
+## User Language
+Русский (Russian)
+
+## Core Requirements
+1. **Performance (P0):** PageSpeed 80+ mobile/desktop
+2. **CLS Fix (P0):** Eliminate Cumulative Layout Shift
+3. **UI Polish (P1):** Visual effects without performance degradation
+4. **Structure (P2):** Split large pages for better performance
+
+## Architecture
+- **Backend:** PHP with FlightPHP, Twig templating
 - **Frontend:** Vanilla JavaScript, CSS, HTML
-- **Database:** MySQL (via Doctrine ORM)
-- **Integrations:** Telegram API (notifications), Google reCAPTCHA
-
-## Project Structure
-```
-/app/
-├── app/                  # PHP Controllers, Middleware, Services
-├── public/
-│   ├── assets/
-│   │   ├── css/          # Main stylesheets (style.css, main-page.css)
-│   │   ├── js/           # JavaScript (app.js)
-│   │   ├── images/       # Site images
-│   │   └── fonts/        # Self-hosted Inter fonts (latin subset)
-│   ├── admin/            # Admin panel assets (OPTIMIZED)
-│   │   ├── css/          # fontawesome.min.css (updated)
-│   │   └── webfonts/     # FontAwesome fonts (SVG/EOT removed)
-│   └── index.php         # Main router
-├── resources/
-│   └── templates/        # Twig templates
-│       ├── landing/main.html.twig  # Main page (now smaller)
-│       ├── quote.html.twig         # Separate quote page (NEW)
-│       ├── template.html.twig      # Base template
-│       └── page.html.twig          # Page template
-├── .env                  # Environment configuration
-├── .gitignore            # Updated to exclude vendor/, .emergent/
-└── composer.json
-```
+- **No database**
 
 ## What's Been Implemented
 
-### Quote Form Separation (Dec 9, 2025 - Current Session)
-- ✅ Created separate `/quote` page (`resources/templates/quote.html.twig`)
-- ✅ Added route `/quote` in `public/index.php`
-- ✅ Added `quotePage()` method in `MainController.php`
-- ✅ Updated all "Get Free Quote" links from `#quote` to `/quote`
-- ✅ Updated navigation header link to `/quote`
-- ✅ Updated Price modal links to `/quote`
-- ✅ Removed embedded quote form from main page
+### 2025-03-09
+- [x] Fixed "Callback" and "Price" buttons
+- [x] Moved Quote form to `/quote` page
+- [x] Moved FAQ to `/faq` page
+- [x] Fixed "Areas" modal on all pages
+- [x] Fixed header button asymmetry
+- [x] Removed redundant toast notification
+- [x] Removed "Back to Home" buttons
+- [x] Implemented scroll-to-top on navigation
+- [x] Restored performant button animations
+- [x] Adjusted form field spacing on `/quote`
+- [x] Styled desktop header phone number
+- [x] Changed mobile header button to orange with glow
+- [x] Implemented scroll-based sticky button logic
+- [x] CSS versioning (cache-busting) implemented
+- [x] Removed CLS-causing block animations
+- [x] **Changed border color from yellow to #38BDF8 (blue)**
+- [x] Updated CSS versions to `?v=20250309j`
 
-### FAQ Separation (Dec 9, 2025 - Current Session)
-- ✅ Created separate `/faq` page (`resources/templates/faq.html.twig`)
-- ✅ Added route `/faq` in `public/index.php`
-- ✅ Added `faqPage()` method in `MainController.php`
-- ✅ Updated navigation header link to `/faq`
-- ✅ Replaced FAQ section on main page with big blue button (same style as Areas)
-- ✅ FAQ accordion functionality works on dedicated page
-- **Result:** Main page template reduced from 475 lines to 180 lines (~62% reduction)
-- **Expected impact:** Smaller DOM, faster initial load, better PageSpeed score
+## PageSpeed Optimization Done
+- reCAPTCHA deferred loading
+- Content split to separate pages
+- GPU-accelerated animations (`transform`, `opacity`)
+- CSS minification
+- Cache-busting with version parameters
 
-### Buttons Fix Verification (Dec 9, 2025)
-- ✅ Verified "Call me back" button works (opens Quick Quote modal)
-- ✅ Verified "Price" button works (opens Price modal)
-- **Note:** Previous issue was likely browser/CDN caching, not code bug
+## Prioritized Backlog
 
-### Previous Performance Optimizations
-- ✅ Self-hosted Inter fonts with latin subsets
-- ✅ Fixed CSS animations to reduce CLS
-- ✅ Deferred FontAwesome and Facebook Pixel loading
-- ✅ Optimized CSS transitions (specific properties vs `transition: all`)
-- ✅ Updated minified assets (.min.css, .min.js)
+### P0 (Critical)
+- [x] Fix CLS issues - DONE
+- [ ] Verify PageSpeed 95+ after user uploads new files
 
-### Repository Cleanup
-- ✅ Fixed `.gitignore` to properly exclude `vendor/` and `.emergent/`
-- ✅ Removed old zip archives
+### P1 (Important)
+- [ ] Image optimization (logo.webp, social-robot.webp)
 
-### Admin Panel Optimization
-- ✅ Removed unused font formats (SVG, EOT) - ~1.7MB saved
-- ✅ Compressed admin background images - ~328KB saved
-- **Total savings: ~2MB**
+### P2 (Nice to have)
+- [ ] FontAwesome `font-display: swap`
+- [ ] CSS cleanup (remove unused code)
 
-### reCAPTCHA Lazy Loading
-- ✅ reCAPTCHA loads only when user interacts with form
-- ✅ Implemented on both main template and quote page
-- **Expected impact:** Reduced TBT (Total Blocking Time)
-
-## Current Status: USER VERIFICATION PENDING
-
-The user needs to run a new Google PageSpeed Insights test to verify:
-1. Performance score improvement (target: 80+)
-2. CLS score improvement (target: < 0.1)
-3. TBT reduction from reCAPTCHA optimization
-4. All functionality works (forms, modals, Telegram notifications)
-
-## API Endpoints
-- `GET /` - Main homepage
-- `GET /quote` - Quote form page
-- `GET /faq` - FAQ page
-- `POST /quick-quote` - Quick quote form submission
-- `POST /applications` - Full application submission
-- `POST /upload/photos` - Photo upload
-- `DELETE /upload/photos` - Photo deletion
-- `GET /admin/login` - Admin login page
-- `POST /admin/login` - Admin authentication
-
-## Environment Variables (.env)
-```
-PROJECT_NAME=cgc_landing
-DEV_MODE=1
-DB_CONNECTION=pdo_mysql
-DB_HOST=localhost
-DB_DATABASE=db
-DB_USERNAME=username
-DB_PASSWORD=password
-TG_TOKEN=[telegram_bot_token]
-TG_CHANNEL=[telegram_channel_id]
-```
-
-## Pending Tasks
-
-### P0 - Critical
-- [ ] User to verify PageSpeed scores (mobile & desktop) after quote + FAQ separation
-- [ ] User to confirm all functionality works on production
-
-### P1 - Important
-- [ ] Re-implement button animations (pulsing effects) with GPU-accelerated CSS if user wants them back
-- [ ] Optimize images (logo.webp, social-robot.webp) to actual display sizes
-
-### P2 - Future/Backlog
-- [ ] Add `font-display: swap` to FontAwesome CSS import
-- [ ] Clean up JavaScript code (remove unused quote-mode logic)
-
-## Known Working Features
-- ✅ Main homepage with all sections
-- ✅ Quote form on separate `/quote` page
-- ✅ FAQ on separate `/faq` page with accordion functionality
-- ✅ FAQ button on main page (big blue, links to /faq)
-- ✅ "Call me back" button and modal
-- ✅ "Price" button and modal
-- ✅ Navigation between pages
-- ✅ Service cards linking to service pages
-- ✅ Cities modal
-- ✅ CGC Robot contact widget
-- ✅ Mobile responsive layout
+## Key Files
+- `resources/templates/template.html.twig` - Base template with CSS links
+- `public/assets/css/style.css` & `.min.css` - Main styles
+- `public/assets/css/main-page.css` & `.min.css` - Homepage styles
+- `public/assets/css/page-city.css` & `.min.css` - City page styles
+- `public/assets/js/app.js` & `.min.js` - JavaScript logic
 
 ## 3rd Party Integrations
-- Telegram API (for form notifications)
-- Google reCAPTCHA (form validation - now lazy loaded)
-- Facebook Pixel (deferred loading implemented)
+- Telegram API (form notifications)
+- Google reCAPTCHA (deferred)
+- Facebook Pixel (deferred)
+
+## Credentials
+- TG_TOKEN and TG_CHANNEL in root `.env`

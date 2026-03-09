@@ -111,7 +111,7 @@
 }
 .answer-card {
     background: #fff;
-    border: 2px solid rgba(252, 211, 77, 0.4);
+    border: 2px solid rgba(56, 189, 248, 0.4);
     border-radius: var(--radius);
     padding: 28px 24px;
     box-shadow: 0 4px 12px rgba(2,132,199,0.08);
@@ -122,7 +122,7 @@
 
 .answer-card:hover {
     transform: translateY(-4px);
-    border-color: #fcd34d;
+    border-color: #38BDF8;
 }
 .answer-card h3 {
     margin: 0 0 12px;
@@ -149,7 +149,7 @@
 }
 .include-item {
     background: #fff;
-    border: 2px solid rgba(252, 211, 77, 0.4);
+    border: 2px solid rgba(56, 189, 248, 0.4);
     padding: 18px 20px;
     border-radius: var(--radius);
     line-height: 1.6;
@@ -163,7 +163,7 @@
 
 .include-item:hover {
     transform: translateY(-4px);
-    border-color: #fcd34d;
+    border-color: #38BDF8;
 }
 @media (max-width: 860px) {
     .answer-grid,

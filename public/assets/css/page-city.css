@@ -1372,7 +1372,7 @@ footer a:hover{ color: white; }
     gap: 14px;
     padding: 14px 16px;
     background: #f8fafc;
-    border: 2px solid rgba(252, 211, 77, 0.4);
+    border: 2px solid rgba(56, 189, 248, 0.4);
     border-radius: 14px;
     text-decoration: none;
     color: #1e293b;
@@ -1386,7 +1386,7 @@ footer a:hover{ color: white; }
 .sticky-menu-item:hover,
 .sticky-menu-item:active {
     background: #eff6ff;
-    border-color: #fcd34d;
+    border-color: #38BDF8;
     transform: translateX(4px);
 }
 
