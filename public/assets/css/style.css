@@ -487,26 +487,25 @@ h2 {
     position: relative;
 }
 
-/* Yellow pulsing glow for trust pills */
+/* Soft yellow pulsing glow for trust pills */
 .trust-pill::before {
     content: '';
     position: absolute;
     inset: -3px;
     border-radius: 999px;
     background: transparent;
-    border: 2px solid #fbbf24;
+    border: 2px solid #fcd34d;
     opacity: 0.5;
     z-index: -1;
-    animation: cardBorderPulse 5s ease-in-out infinite;
+    animation: cardBorderPulse 7s ease-in-out infinite;
 }
 .trust-pill:nth-child(1)::before { animation-delay: 0s; }
-.trust-pill:nth-child(2)::before { animation-delay: 1s; }
-.trust-pill:nth-child(3)::before { animation-delay: 2s; }
-.trust-pill:nth-child(4)::before { animation-delay: 3s; }
+.trust-pill:nth-child(2)::before { animation-delay: 1.75s; }
+.trust-pill:nth-child(3)::before { animation-delay: 3.5s; }
+.trust-pill:nth-child(4)::before { animation-delay: 5.25s; }
 
 .trust-pill:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.35), 0 0 15px rgba(251, 191, 36, 0.4);
 }
 
 .trust-dot{
@@ -537,37 +536,37 @@ h2 {
     overflow: visible;
 }
 
-/* Pulsing yellow border glow */
+/* Pulsing soft yellow border glow */
 .service-card::before {
     content: '';
     position: absolute;
     inset: -3px;
     border-radius: calc(var(--radius) + 2px);
     background: transparent;
-    border: 2px solid #fbbf24;
+    border: 2px solid #fcd34d;
     opacity: 0.6;
     z-index: -1;
-    animation: cardBorderPulse 5s ease-in-out infinite;
+    animation: cardBorderPulse 7s ease-in-out infinite;
 }
 
 @keyframes cardBorderPulse {
     0%, 100% { 
-        opacity: 0.4;
-        box-shadow: 0 0 8px #fbbf24, 0 0 16px rgba(251, 191, 36, 0.3);
+        opacity: 0.3;
+        box-shadow: 0 0 6px #fcd34d, 0 0 12px rgba(252, 211, 77, 0.2);
     }
     50% { 
-        opacity: 1;
-        box-shadow: 0 0 15px #fbbf24, 0 0 30px rgba(251, 191, 36, 0.5);
+        opacity: 0.8;
+        box-shadow: 0 0 12px #fcd34d, 0 0 24px rgba(252, 211, 77, 0.4);
     }
 }
 
 /* Staggered animation delays for cards */
 .service-card:nth-child(1)::before { animation-delay: 0s; }
-.service-card:nth-child(2)::before { animation-delay: 0.8s; }
-.service-card:nth-child(3)::before { animation-delay: 1.6s; }
-.service-card:nth-child(4)::before { animation-delay: 2.4s; }
-.service-card:nth-child(5)::before { animation-delay: 3.2s; }
-.service-card:nth-child(6)::before { animation-delay: 4.0s; }
+.service-card:nth-child(2)::before { animation-delay: 1.2s; }
+.service-card:nth-child(3)::before { animation-delay: 2.4s; }
+.service-card:nth-child(4)::before { animation-delay: 3.5s; }
+.service-card:nth-child(5)::before { animation-delay: 4.7s; }
+.service-card:nth-child(6)::before { animation-delay: 5.8s; }
 
 /* Staggered float animation for cards */
 .service-card:nth-child(1) { animation: cardFloat 4s ease-in-out infinite; animation-delay: 0s; }
@@ -609,16 +608,28 @@ h2 {
     background:white;
     border-radius: var(--radius);
     box-shadow: var(--shadow-sm);
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     overflow:hidden;
-    /* GPU-accelerated properties only to prevent CLS */
     transition: transform 0.38s ease, box-shadow 0.38s ease;
     will-change: transform;
+    position: relative;
+}
+
+/* Soft yellow pulsing glow for FAQ items */
+.faq-item::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: calc(var(--radius) + 2px);
+    background: transparent;
+    border: 2px solid #fcd34d;
+    opacity: 0.5;
+    z-index: -1;
+    animation: cardBorderPulse 7s ease-in-out infinite;
 }
 
 .faq-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.35), 0 0 15px rgba(251, 191, 36, 0.4);
 }
 
 .faq-question{
@@ -764,17 +775,30 @@ h2 {
     border-radius: 12px; 
     text-align: center; 
     font-weight: 800; 
-    border: 1px solid var(--primary-l); 
-    /* GPU-accelerated properties only */
+    border: 2px solid transparent; 
     transition: transform 0.38s ease, box-shadow 0.38s ease;
     text-decoration: none;
     color: inherit;
     display: block;
     will-change: transform;
+    position: relative;
 }
+
+/* Soft yellow pulsing glow for city blocks */
+.city::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 14px;
+    background: transparent;
+    border: 2px solid #fcd34d;
+    opacity: 0.5;
+    z-index: -1;
+    animation: cardBorderPulse 7s ease-in-out infinite;
+}
+
 .city:hover {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(251, 191, 36, 0.35), 0 0 15px rgba(251, 191, 36, 0.4);
 }
 
 footer {
