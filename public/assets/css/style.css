@@ -140,7 +140,7 @@ nav a:hover, nav a.active {
 }
 
 /* ===== Header buttons (base) ===== */
-.btn-call, .btn-email {
+.btn-email {
     font-weight: 900;
     border-radius: 999px;
     text-decoration: none;
@@ -150,31 +150,6 @@ nav a:hover, nav a.active {
     justify-content: center;
     white-space: nowrap;
     line-height: 1.1;
-}
-
-/* Call button base */
-.btn-call {
-    background: var(--accent);
-    color: var(--gray-8);
-    padding: 18px 44px;
-    font-size: 1.12rem;
-    box-shadow: 0 6px 18px rgba(251,191,36,0.35);
-    border: 2px solid var(--primary-l);
-    animation: pulse 2.4s infinite ease-in-out;
-}
-
-.btn-call:hover {
-    background: var(--accent-d);
-    color: white;
-    transform: translateY(-3px);
-    box-shadow: 0 14px 32px rgba(251,191,36,0.45);
-}
-
-/* FIX: on desktop the right phone button must NOT jump on hover */
-@media (min-width: 861px){
-    header .btn-call:hover{
-        transform: translateY(-50%);
-    }
 }
 
 @keyframes pulse {
@@ -287,8 +262,7 @@ nav a:hover, nav a.active {
         padding-right: 300px;
     }
 
-    header .btn-email,
-    header .btn-call{
+    header .btn-email{
         position: fixed;
         top: calc(var(--headerH) / 2);
         transform: translateY(-50%);
@@ -319,28 +293,6 @@ nav a:hover, nav a.active {
         box-shadow: 0 16px 34px rgba(2,132,199,0.30);
     }
 
-    header .btn-call{
-        right: 20px;
-        left: auto;
-        position: fixed !important;
-        top: calc(var(--headerH) / 2) !important;
-        transform: translateY(-50%) !important;
-        background: linear-gradient(90deg, var(--primary), var(--primary-l));
-        color: white;
-        border: none;
-        box-shadow: 0 10px 24px rgba(2,132,199,0.24);
-        padding: 10px 18px;
-    }
-    header .btn-call:hover{
-        background: linear-gradient(90deg, var(--primary-d), var(--primary));
-        box-shadow: 0 16px 34px rgba(2,132,199,0.30);
-    }
-
-    header .btn-call .btn-main{
-        font-size: 1.14rem;
-        font-weight: 900;
-        letter-spacing: 0.2px;
-    }
     header .btn-email .btn-main{
         font-size: 1.02rem;
         font-weight: 900;
@@ -1311,59 +1263,8 @@ body.quote-mode #quotePage .btn-sms:hover{
         z-index: 2500 !important;
     }
 
-    #headerPhoneBtn{
-        order: 3;
-        margin-left: auto;
-        flex: 0 0 auto;
-        position: relative !important;
-        z-index: 2500 !important;
-    }
-
     nav{
         z-index: 2000;
-    }
-
-    /* make header call button orange (like Price) with glow */
-    header .btn-call{
-        background: linear-gradient(135deg, #f97316 0%, #ea580c 100%) !important;
-        color: #fff !important;
-        border: none !important;
-        box-shadow: 0 4px 20px rgba(249, 115, 22, 0.5) !important;
-        padding: 12px 18px !important;
-        font-size: 1rem !important;
-        animation: mobileGlowWiggle 8s ease-in-out infinite !important;
-        will-change: transform, box-shadow, filter;
-        position: relative;
-        overflow: visible;
-    }
-    header .btn-call::before{
-        content: '';
-        position: absolute;
-        inset: -3px;
-        border-radius: 999px;
-        background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
-        opacity: 0.4;
-        filter: blur(12px);
-        z-index: -1;
-        animation: mobileGlowPulse 2s ease-in-out infinite;
-    }
-    header .btn-call:hover{
-        background: linear-gradient(135deg, #ea580c 0%, #c2410c 100%) !important;
-        box-shadow: 0 8px 28px rgba(249, 115, 22, 0.6) !important;
-        transform: none !important;
-    }
-    header .btn-call .btn-main{
-        display: none !important;
-    }
-    header .btn-call::after{
-        content: "Call now";
-        font-weight: 900;
-        letter-spacing: 0.2px;
-    }
-    
-    @keyframes mobileGlowPulse {
-        0%, 100% { opacity: 0.3; }
-        50% { opacity: 0.6; }
     }
 
     /* quote mobile actions (sms/email) under header */

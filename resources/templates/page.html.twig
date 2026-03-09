@@ -11,12 +11,7 @@
     <style>
         :root{--headerH:96px;--primary:#0284c7}
         header{position:sticky;top:0;z-index:1000;height:var(--headerH);background:#fff}
-        @media(max-width:860px){
-            header .btn-call{position:fixed;top:8px;right:8px;padding:10px 16px;background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;font-weight:700;border-radius:999px;z-index:1001;width:auto;min-width:auto}
-            header .btn-call .btn-main{display:none}
-            header .btn-call::after{content:"Call now"}
-            header .btn-email{display:none}
-        }
+        @media(max-width:860px){header .btn-email{display:none}}
     </style>
     <script>if('scrollRestoration' in history)history.scrollRestoration='manual';window.scrollTo(0,0);</script>
     
@@ -54,18 +49,15 @@
         .logo{cursor:pointer}.logo img{height:80px;width:auto}
         nav{display:flex;gap:40px;align-items:center}
         nav a{color:var(--gray-8);text-decoration:none;font-weight:600}
-        .btn-call,.btn-email{font-weight:900;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
+        .btn-email{font-weight:900;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;justify-content:center}
         .hamburger{display:none;font-size:2.8rem;background:0 0;border:none;cursor:pointer;color:var(--primary)}
         /* Mobile critical styles */
         @media(max-width:860px){
-            header .btn-call{position:fixed;top:8px;right:8px;padding:10px 16px;background:linear-gradient(135deg,#f97316,#ea580c);color:#fff;font-size:0.95rem;z-index:1001}
-            header .btn-call .btn-main{display:none}
-            header .btn-call::after{content:"Call now";font-weight:700}
             header .btn-email{display:none}
             .cgc-robot-wrap .social-icons{opacity:0;pointer-events:none}
         }
         @media(max-width:860px){nav{display:none}.hamburger{display:block}}
-        @media(min-width:861px){header .btn-call,header .btn-email{position:fixed;top:calc(var(--headerH)/2);transform:translateY(-50%);min-width:260px;height:58px;z-index:1001;background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff}header .btn-email{left:20px}header .btn-call{right:20px}}
+        @media(min-width:861px){header .btn-email{position:fixed;top:calc(var(--headerH)/2);transform:translateY(-50%);min-width:260px;height:58px;z-index:1001;background:linear-gradient(90deg,var(--primary),var(--primary-l));color:#fff;left:20px}}
         .cgc-robot-wrap{position:fixed;right:0;bottom:0;z-index:2600;pointer-events:none}
         .cgc-robot-btn{pointer-events:auto;border:0;background:0 0;padding:0;cursor:pointer;width:240px;height:240px}
         .cgc-robot-img{width:100%;height:100%;object-fit:contain}
@@ -100,11 +92,11 @@
     {% endblock %}
 
     <!-- Non-blocking CSS -->
-    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309j" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309j"></noscript>
+    <link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309k" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/page-city.min.css?v=20250309k"></noscript>
     <!-- Modals styles (shared with main page) -->
-    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309j" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309j"></noscript>
+    <link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309k" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="/assets/css/main-page.min.css?v=20250309k"></noscript>
 </head>
 <body>
 <div id="bg-robots"></div>
