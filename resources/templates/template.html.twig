@@ -4,6 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
 
+    <!-- Scroll to top on page load - must be early -->
+    <script>
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        window.scrollTo(0, 0);
+    </script>
+
     <!-- AEO: Improved meta tags -->
     <title>Gutter Cleaning, Window Washing & Moss Removal in Metro Vancouver | Clean Gutters Crew</title>
     <meta name="description" content="Local exterior cleaning in Metro Vancouver: gutter cleaning, window washing, pressure washing, moss removal, junk removal and handyman services. Fast quotes, insured service, pay after the job." />
@@ -612,14 +618,6 @@
         
         // NO automatic fallback - only load when user needs it
     })();
-    </script>
-
-    <!-- Always scroll to top on page load -->
-    <script>
-    if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-    }
-    window.scrollTo(0, 0);
     </script>
 {% endblock %}
 
