@@ -63,7 +63,8 @@
     font-size: 0.98rem;
     box-shadow: 0 10px 24px rgba(2,132,199,0.10);
     white-space: nowrap;
-    transition: all 0.3s ease;
+    /* Optimized transition - GPU accelerated properties only */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
 }
 .aeo-hero .hero-point::before {

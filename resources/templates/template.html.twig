@@ -31,9 +31,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
 
-    <!-- Preconnect to external domains -->
+    <!-- Preconnect to external domains - only critical resources -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="preconnect" href="https://connect.facebook.net" crossorigin>
+    <!-- Facebook preconnect removed - pixel loads after interaction -->
     <link rel="dns-prefetch" href="https://www.google.com">
     <link rel="dns-prefetch" href="https://www.gstatic.com">
 
@@ -542,7 +542,11 @@
     <!-- Deferred Facebook Pixel - loads after page is ready -->
     <script>
     window.addEventListener('load', function() {
-        setTimeout(function() {
+        // Load Facebook Pixel only after user interaction or 5 seconds
+        var fbLoaded = false;
+        function loadFBPixel() {
+            if (fbLoaded) return;
+            fbLoaded = true;
             !function(f,b,e,v,n,t,s)
             {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
                 n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -553,7 +557,12 @@
                 'https://connect.facebook.net/en_US/fbevents.js');
             fbq('init', '4371677243055821');
             fbq('track', 'PageView');
-        }, 2000);
+        }
+        // Load on first interaction or after 5 seconds
+        ['scroll', 'click', 'touchstart', 'mousemove'].forEach(function(e) {
+            document.addEventListener(e, loadFBPixel, {once: true, passive: true});
+        });
+        setTimeout(loadFBPixel, 5000);
     });
     </script>
     
