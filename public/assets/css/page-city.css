@@ -1372,54 +1372,21 @@ footer a:hover{ color: white; }
     gap: 14px;
     padding: 14px 16px;
     background: #f8fafc;
-    border: 2px solid transparent;
+    border: 2px solid rgba(252, 211, 77, 0.4);
     border-radius: 14px;
     text-decoration: none;
     color: #1e293b;
     font-weight: 600;
     font-size: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     font-family: inherit;
     cursor: pointer;
-    position: relative;
 }
-
-/* Soft yellow pulsing glow for service menu items */
-.sticky-menu-item:not(.highlight):not(.sticky-quote-btn)::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border-radius: 16px;
-    background: transparent;
-    border: 2px solid #fcd34d;
-    opacity: 0.5;
-    z-index: -1;
-    animation: menuItemPulse 7s ease-in-out infinite;
-}
-
-@keyframes menuItemPulse {
-    0%, 100% { 
-        opacity: 0.3;
-        box-shadow: 0 0 6px #fcd34d, 0 0 12px rgba(252, 211, 77, 0.2);
-    }
-    50% { 
-        opacity: 0.7;
-        box-shadow: 0 0 10px #fcd34d, 0 0 20px rgba(252, 211, 77, 0.35);
-    }
-}
-
-/* Staggered delays for menu items */
-.sticky-menu-item:nth-child(1)::before { animation-delay: 0s; }
-.sticky-menu-item:nth-child(2)::before { animation-delay: 1.2s; }
-.sticky-menu-item:nth-child(3)::before { animation-delay: 2.4s; }
-.sticky-menu-item:nth-child(4)::before { animation-delay: 3.5s; }
-.sticky-menu-item:nth-child(5)::before { animation-delay: 4.7s; }
-.sticky-menu-item:nth-child(6)::before { animation-delay: 5.8s; }
 
 .sticky-menu-item:hover,
 .sticky-menu-item:active {
     background: #eff6ff;
-    border-color: var(--primary);
+    border-color: #fcd34d;
     transform: translateX(4px);
 }
 
