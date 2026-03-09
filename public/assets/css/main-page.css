@@ -337,11 +337,35 @@
     font-weight: 700;
     border-radius: 50px;
     cursor: pointer;
-    /* GPU-accelerated properties only */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
-    /* Removed infinite animation to prevent CLS */
     will-change: transform;
+    position: relative;
+    overflow: visible;
+    animation: btnPulseGreen 3s ease-in-out infinite;
+}
+
+/* Glow effect pseudo-element */
+.btn-callback::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    opacity: 0;
+    filter: blur(15px);
+    z-index: -1;
+    animation: glowPulseGreen 3s ease-in-out infinite;
+}
+
+@keyframes btnPulseGreen {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes glowPulseGreen {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
 }
 
 /* PC: увеличить кнопки на 30% */
@@ -378,12 +402,38 @@
     font-weight: 700;
     border-radius: 50px;
     cursor: pointer;
-    /* GPU-accelerated properties only */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 20px rgba(249, 115, 22, 0.4);
-    /* Removed infinite animation to prevent CLS */
     font-family: inherit;
     will-change: transform;
+    position: relative;
+    overflow: visible;
+    animation: btnPulseOrange 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+/* Glow effect pseudo-element */
+.btn-price::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+    opacity: 0;
+    filter: blur(15px);
+    z-index: -1;
+    animation: glowPulseOrange 3s ease-in-out infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes btnPulseOrange {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+}
+
+@keyframes glowPulseOrange {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.6; }
 }
 
 /* PC: увеличить кнопки на 30% и сделать одинаковыми */
