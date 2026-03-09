@@ -35,15 +35,20 @@ Enhance and polish an existing cleaning service website built with PHP and Twig 
 - [x] Implemented scroll-based sticky button logic
 - [x] CSS versioning (cache-busting) implemented
 - [x] Removed CLS-causing block animations
-- [x] **Changed border color from yellow to #38BDF8 (blue)**
-- [x] Updated CSS versions to `?v=20250309j`
+- [x] Changed border color from yellow to #38BDF8 (blue)
+- [x] **Fixed CLS-causing button animations** — removed `scale()` and `translate()` from:
+  - `pulse` animation (header phone button)
+  - `mobileGlowWiggle` animation (mobile Call button)
+  - `btnPulseGreen` animation (Callback button)
+  - `btnPulseOrange` animation (Price button)
+- [x] Animations now use only `box-shadow` and `filter: brightness()` (CLS-safe)
 
 ## PageSpeed Optimization Done
 - reCAPTCHA deferred loading
 - Content split to separate pages
-- GPU-accelerated animations (`transform`, `opacity`)
+- GPU-accelerated animations (`box-shadow`, `filter`, `opacity` only)
 - CSS minification
-- Cache-busting with version parameters
+- Cache-busting with version parameters (`?v=20250309k`)
 
 ## Prioritized Backlog
 
@@ -64,6 +69,10 @@ Enhance and polish an existing cleaning service website built with PHP and Twig 
 - `public/assets/css/main-page.css` & `.min.css` - Homepage styles
 - `public/assets/css/page-city.css` & `.min.css` - City page styles
 - `public/assets/js/app.js` & `.min.js` - JavaScript logic
+
+## CLS-Safe Animation Guidelines
+**DO use:** `box-shadow`, `filter`, `opacity`
+**DON'T use:** `scale()`, `translate()`, `width`, `height`, `margin`, `padding`
 
 ## 3rd Party Integrations
 - Telegram API (form notifications)
