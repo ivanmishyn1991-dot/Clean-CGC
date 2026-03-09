@@ -474,18 +474,35 @@ h2 {
     gap: 10px;
     padding: 10px 14px;
     background: white;
-    border: 1px solid rgba(56,189,248,0.55);
+    border: 2px solid transparent;
     border-radius: 999px;
     font-weight: 700;
     color: var(--gray-8);
     font-size: 0.98rem;
     box-shadow: 0 10px 24px rgba(2,132,199,0.10);
     white-space: nowrap;
-    /* GPU-accelerated properties only to prevent CLS */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: default;
     will-change: transform;
+    position: relative;
 }
+
+/* Yellow pulsing glow for trust pills */
+.trust-pill::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 999px;
+    background: transparent;
+    border: 2px solid #fbbf24;
+    opacity: 0.5;
+    z-index: -1;
+    animation: cardBorderPulse 5s ease-in-out infinite;
+}
+.trust-pill:nth-child(1)::before { animation-delay: 0s; }
+.trust-pill:nth-child(2)::before { animation-delay: 1s; }
+.trust-pill:nth-child(3)::before { animation-delay: 2s; }
+.trust-pill:nth-child(4)::before { animation-delay: 3s; }
 
 .trust-pill:hover {
     transform: translateY(-4px);
@@ -530,7 +547,7 @@ h2 {
     border: 2px solid #fbbf24;
     opacity: 0.6;
     z-index: -1;
-    animation: cardBorderPulse 2.5s ease-in-out infinite;
+    animation: cardBorderPulse 5s ease-in-out infinite;
 }
 
 @keyframes cardBorderPulse {
@@ -546,11 +563,11 @@ h2 {
 
 /* Staggered animation delays for cards */
 .service-card:nth-child(1)::before { animation-delay: 0s; }
-.service-card:nth-child(2)::before { animation-delay: 0.4s; }
-.service-card:nth-child(3)::before { animation-delay: 0.8s; }
-.service-card:nth-child(4)::before { animation-delay: 1.2s; }
-.service-card:nth-child(5)::before { animation-delay: 1.6s; }
-.service-card:nth-child(6)::before { animation-delay: 2.0s; }
+.service-card:nth-child(2)::before { animation-delay: 0.8s; }
+.service-card:nth-child(3)::before { animation-delay: 1.6s; }
+.service-card:nth-child(4)::before { animation-delay: 2.4s; }
+.service-card:nth-child(5)::before { animation-delay: 3.2s; }
+.service-card:nth-child(6)::before { animation-delay: 4.0s; }
 
 /* Staggered float animation for cards */
 .service-card:nth-child(1) { animation: cardFloat 4s ease-in-out infinite; animation-delay: 0s; }
