@@ -1188,7 +1188,8 @@ input[type="checkbox"] {
 .grid-2{
     display:grid;
     grid-template-columns: 1fr 1fr;
-    gap: 14px;
+    gap: 16px;
+    margin-bottom: 16px;
 }
 
 .submit-row{
