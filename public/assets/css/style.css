@@ -520,14 +520,14 @@ h2 {
     overflow: visible;
 }
 
-/* Pulsing lime green border glow */
+/* Pulsing yellow border glow */
 .service-card::before {
     content: '';
     position: absolute;
     inset: -3px;
     border-radius: calc(var(--radius) + 2px);
     background: transparent;
-    border: 2px solid #84cc16;
+    border: 2px solid #fbbf24;
     opacity: 0.6;
     z-index: -1;
     animation: cardBorderPulse 2.5s ease-in-out infinite;
@@ -536,11 +536,11 @@ h2 {
 @keyframes cardBorderPulse {
     0%, 100% { 
         opacity: 0.4;
-        box-shadow: 0 0 8px #84cc16, 0 0 16px rgba(132, 204, 22, 0.3);
+        box-shadow: 0 0 8px #fbbf24, 0 0 16px rgba(251, 191, 36, 0.3);
     }
     50% { 
         opacity: 1;
-        box-shadow: 0 0 15px #84cc16, 0 0 30px rgba(132, 204, 22, 0.5);
+        box-shadow: 0 0 15px #fbbf24, 0 0 30px rgba(251, 191, 36, 0.5);
     }
 }
 
