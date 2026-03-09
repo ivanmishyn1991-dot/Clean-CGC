@@ -330,7 +330,9 @@ nav a:hover, nav a.active {
         width: auto !important;
         min-width: auto !important;
         max-width: none !important;
-        height: auto;
+        height: var(--headerH);
+        top: 0;
+        transform: none;
         display: flex !important;
         align-items: center;
         justify-content: center;
